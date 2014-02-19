@@ -15,40 +15,40 @@ require 'triangle/version'
 # 4|7 8 9 10
 module Triangle
   # Class to implement the triangle puzzle
-  class Triangle
-    def initialize(rows)
-      fail(ArgumentError, 'Must pass in number of rows to output') if rows.nil?
-      fail(ArgumentError, 'Number of rows must be positive') if rows < 0
-      @rows = rows
-    end
+  extend self
+  def show(rows)
+    validate(rows)
+    lines(rows).each { |l| puts l }
+  end
 
-    def show
-      lines.each { |l| puts l }
+  def show_centered(rows)
+    validate(rows)
+    all_rows = lines(rows)
+    widest_length = (all_rows.last || '').length
+    # pad all other rows
+    all_rows[0..-1].each do |row|
+      diff = widest_length - row.length
+      pad = diff / 2
+      row.prepend(' ' * pad)
     end
+    all_rows.each { |r| puts r }
+  end
 
-    def show_centered
-      rows = lines
-      widest_length = (rows.last || '').length
-      # pad all other rows
-      rows[0..-1].each do |row|
-        diff = widest_length - row.length
-        pad = diff / 2
-        row.prepend(' ' * pad)
-      end
-      rows.each { |r| puts r }
+  private
+
+  def validate(rows)
+    fail(ArgumentError, 'Must pass in number of rows to output') if rows.nil?
+    fail(ArgumentError, 'Number of rows must be positive') if rows < 0
+  end
+
+  def lines(rows)
+    num = 0
+    lines = []
+    rows.times do |i|
+      arr = []
+      (i + 1).times { arr << (num = num.succ) }
+      lines << arr.join(' ')
     end
-
-    private
-
-    def lines
-      num = 0
-      lines = []
-      @rows.times do |i|
-        arr = []
-        (i + 1).times { arr << (num = num.succ) }
-        lines << arr.join(' ')
-      end
-      lines
-    end
+    lines
   end
 end

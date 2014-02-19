@@ -2,10 +2,9 @@
 
 require 'triangle'
 
-triangle = ::Triangle::Triangle.new(ARGV[0].to_i)
-
+rows = ARGV[0].to_i
 if ARGV.length == 2 && ARGV[1] == '--centered'
-  triangle.show_centered
+  Triangle.show_centered(rows)
 else
-  triangle.show
+  Triangle.show(rows)
 end

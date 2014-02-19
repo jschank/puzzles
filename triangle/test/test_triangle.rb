@@ -7,10 +7,10 @@ class TestTriangle < MiniTest::Test
   end
 
   def test_that_it_reports_missing_input
-    assert_raises(ArgumentError) { ::Triangle::Triangle.new(nil) }
+    assert_raises(ArgumentError) { Triangle.show(nil) }
   end
 
   def test_that_it_reports_invalid_input
-    assert_raises(ArgumentError) { ::Triangle::Triangle.new(-4) }
+    assert_raises(ArgumentError) { Triangle.show(-4) }
   end
 end
