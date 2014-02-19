@@ -14,12 +14,12 @@ Create an application that will take a number in Terminal and output the same nu
 
 Enter in terminal:
 
-$ ruby triangle.rb 4
-Expected result:
-
-1
-2 3
-4 5 6
-7 8 9 10
+    $ ruby triangle.rb 4
+    Expected result:
+    
+    1
+    2 3
+    4 5 6
+    7 8 9 10
 
 I also created a centered version, which required a bit a refactoring. Initially I tried a separate class but that led to a lot of repeated code. The history would show this, but it was easier to just create a fresh repo
