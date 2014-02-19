@@ -9,7 +9,7 @@ require 'rubocop/rake_task'
 desc 'Run RuboCop on the code'
 Rubocop::RakeTask.new(:rubocop) do |task|
   task.formatters = ['progress', 'offences']
-  task.patterns = ['lib/**/*.rb', 'bin/**/*.rb', 'test/**/*.rb']
+  task.patterns = ['lib/**/*.rb', 'bin/**/*', 'test/**/*.rb']
   task.fail_on_error = false
 end
 
