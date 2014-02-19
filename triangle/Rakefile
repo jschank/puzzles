@@ -1,0 +1,18 @@
+require 'bundler/gem_tasks'
+require 'rake/testtask'
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+end
+
+require 'rubocop/rake_task'
+Rubocop::RakeTask.new
+
+task :default => [:test, :rubocop]
+
+# task :default do
+#   system "gem env"
+#   system "ruby --version"
+#   system "pwd"
+#   system "printenv"
+# end

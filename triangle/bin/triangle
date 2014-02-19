@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'triangle'
+
+triangle = ::Triangle::Triangle.new(ARGV[0].to_i)
+
+if ARGV.length == 2 && ARGV[1] == '--centered'
+  triangle.show_centered
+else
+  triangle.show
+end
