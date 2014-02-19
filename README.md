@@ -23,3 +23,10 @@ Enter in terminal:
     7 8 9 10
 
 I also created a centered version, which required a bit a refactoring. Initially I tried a separate class but that led to a lot of repeated code. The history would show this, but it was easier to just create a fresh repo
+
+moveit
+------
+Chess validator puzzle for Arlington Ruby Meetup Group
+I was too late to do it for the meet up, but I think I want to try it anyway
+
+[Link to puzzle Definition](http://www.puzzlenode.com/puzzles/13-chess-validator)
