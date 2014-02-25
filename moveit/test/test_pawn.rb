@@ -9,4 +9,8 @@ class TestPawn < MiniTest::Test
     piece = Chesspiece.create('wP')
     assert_equal('wP', piece.show)
   end
+
+  def test_that_moving_forward_one_space_is_valid
+  end
+
 end

@@ -27,6 +27,10 @@ module MoveIt
       end
     end
 
+    def valid_move?(start, target, board)
+      fail NotImplementedError, 'valid_move? should be called on a concrete sub-class', caller
+    end
+
     attr_reader :color
 
     private

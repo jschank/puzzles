@@ -41,9 +41,4 @@ class TestChessboard < MiniTest::Test
     assert_equal(:white, piece.color)
     assert(board.occupied?('d5'))
   end
-
-  # def test_that_it_can_descibe_itself
-  #   board = Chessboard.new
-  #   # assert_equal(board.show
-  # end
 end
