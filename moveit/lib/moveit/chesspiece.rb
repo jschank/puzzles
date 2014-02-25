@@ -19,6 +19,14 @@ module MoveIt
       @color = color
     end
 
+    def color_code
+      case @color
+      when :black then 'b'
+      when :white then 'w'
+      else fail TypeError, "#{@color} is not a valid color", caller
+      end
+    end
+
     attr_reader :color
 
     private
@@ -30,41 +38,5 @@ module MoveIt
     def self.signal_invalid_piece(piece_notation)
       fail TypeError, "#{piece_notation} does not represent a valid chess piece", caller
     end
-  end
-
-  # Pawn piece - can move forward one space at a time, along a single file
-  # unless on home row - then it can move up to three spaces forward
-  # can capture a piece if it is forward, and on the next or previous file
-  class Pawn < Chesspiece
-  end
-
-  # Rook piece - can move to any space in the same rank, or file
-  # Blocked by enemy pieces
-  # Blocked by friendly pieces
-  class Rook < Chesspiece
-  end
-
-  # Knight piece - Moves in an "L" shape:
-  # two spaces along rank or file, then 1 space along file or rank (respectively)
-  # Not Blocked by enemy pieces
-  # Not Blocked by friendly pieces
-  class Knight < Chesspiece
-  end
-
-  # Bishop piece - Moves along diagonals
-  # Blocked by enemy pieces
-  # Blocked by friendly pieces
-  class Bishop < Chesspiece
-  end
-
-  # Queen piece - Moves as bishop or rook
-  # Blocked by enemy pieces
-  # Blocked by friendly pieces
-  class Queen < Chesspiece
-  end
-
-  # King piece - Moves 1 space in any direction
-  # cannot move into, or through jeopardy (check)
-  class King < Chesspiece
   end
 end

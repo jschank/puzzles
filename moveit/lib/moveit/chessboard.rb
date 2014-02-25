@@ -21,5 +21,9 @@ module MoveIt
     def occupied?(algebraic_coordinate)
       !!@board[algebraic_coordinate]
     end
+
+    def piece_at(algebraic_coordinate)
+      @board[algebraic_coordinate]
+    end
   end
 end

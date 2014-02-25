@@ -32,4 +32,18 @@ class TestChessboard < MiniTest::Test
     board.add(piece, 'a1')
     assert(board.occupied?('a1'))
   end
+
+  def test_that_it_returns_correct_piece_given_coordinates
+    board = Chessboard.new
+    board.add(Chesspiece.create('wR'), 'd5')
+    piece = board.piece_at('d5')
+    assert_kind_of(Rook, piece)
+    assert_equal(:white, piece.color)
+    assert(board.occupied?('d5'))
+  end
+
+  # def test_that_it_can_descibe_itself
+  #   board = Chessboard.new
+  #   # assert_equal(board.show
+  # end
 end
