@@ -5,7 +5,7 @@ require 'moveit/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "moveit"
-  spec.version       = Moveit::VERSION
+  spec.version       = MoveIt::VERSION
   spec.authors       = ["John F Schank III"]
   spec.email         = ["jschank@mac.com"]
   spec.summary       = %q{Validate chess moves}
@@ -28,4 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard-bundler'
   spec.add_development_dependency 'guard-rubocop'
   spec.add_development_dependency 'guard-minitest'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'pry-debugger'
+  spec.add_development_dependency 'pry-doc'  
 end

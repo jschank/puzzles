@@ -1,4 +1,4 @@
 # Define version
-module Moveit
+module MoveIt
   VERSION = '0.0.1'
 end
