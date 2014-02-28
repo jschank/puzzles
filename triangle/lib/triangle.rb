@@ -34,6 +34,12 @@ module Triangle
     all_rows.each { |r| puts r }
   end
 
+  def show_stars(rows)
+    rows.times do |i|
+      puts ("*" * (i+1)).rjust(rows)
+    end
+  end
+
   private
 
   def validate(rows)
@@ -51,4 +57,5 @@ module Triangle
     end
     lines
   end
+
 end

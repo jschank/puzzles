@@ -5,6 +5,8 @@ require 'triangle'
 rows = ARGV[0].to_i
 if ARGV.length == 2 && ARGV[1] == '--centered'
   Triangle.show_centered(rows)
+elsif ARGV[1] == '--stars'
+  Triangle.show_stars(rows)
 else
   Triangle.show(rows)
 end
