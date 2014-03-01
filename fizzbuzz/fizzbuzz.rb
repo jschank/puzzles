@@ -21,6 +21,21 @@ module FizzBuzz
     array.each{ |i| puts i}
   end
 
+  def self.no_conditionals
+    fizzy = [1,0,0]
+    buzzy = [1,0,0,0,0]
+
+    1.upto(100) do |i|
+      fizzy.rotate!
+      buzzy.rotate!
+      str = i.to_s * (1 - (fizzy[0] | buzzy[0]))
+      str << "Fizz" * fizzy[0]
+      str << "Buzz" * buzzy[0]
+      puts str
+    end
+
+  end
+
 end
 
 # FizzBuzz::classic
@@ -34,6 +49,10 @@ class TestLibraryFileName < MiniTest::Test
 
   def test_map_version_fizzbuzz
     verify_fizzbuzz{FizzBuzz::map_version}
+  end
+
+  def test_no_conditionals_fizzbuzz
+    verify_fizzbuzz{FizzBuzz::no_conditionals}
   end
 
   def verify_fizzbuzz(&block)
