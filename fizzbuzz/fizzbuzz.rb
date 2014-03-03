@@ -33,12 +33,19 @@ module FizzBuzz
       str << "Buzz" * buzzy[0]
       puts str
     end
-
   end
 
 end
 
-# FizzBuzz::classic
+# require 'benchmark'
+# include Benchmark
+#
+# n = 10
+# Benchmark.benchmark(CAPTION, 15, FORMAT) do |x|
+#   tc = x.report("Classic:") { n.times{FizzBuzz::classic}}
+#   tm = x.report("Map:") {n.times{FizzBuzz::map_version}}
+#   tn = x.report("No Conditionals:") {n.times{FizzBuzz::no_conditionals}}
+# end
 
 require 'minitest/autorun'
 

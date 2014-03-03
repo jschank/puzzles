@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+
+gem 'autotest-standalone'
+gem 'autotest-fsevent'
+gem 'autotest-growl'
+gem 'autotest-suffix'
+
