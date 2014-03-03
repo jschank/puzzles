@@ -4,6 +4,6 @@ require 'minitest/autorun'
 require 'pry'
 
 require 'minitest/reporters'
-Minitest::Reporters.use!
+Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(:color => true)]
 
 include MoveIt

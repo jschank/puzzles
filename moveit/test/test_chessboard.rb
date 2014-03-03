@@ -41,4 +41,36 @@ class TestChessboard < MiniTest::Test
     assert_equal(:white, piece.color)
     assert(board.occupied?('d5'))
   end
+
+  def test_that_it_knows_coordinates_are_on_same_rank
+    assert(Chessboard.same_rank?('b1', 'f1'), "two points on same rank")
+    assert(Chessboard.same_rank?('f1', 'b1'), "two points on same rank")
+    refute(Chessboard.same_rank?('b1', 'b6'), "two points NOT on same rank")
+    refute(Chessboard.same_rank?('b6', 'b1'), "two points NOT on same rank")
+  end
+
+  def test_that_it_knows_coordinates_are_on_same_file
+    assert(Chessboard.same_file?('b1', 'b8'), "two points on same file")
+    assert(Chessboard.same_file?('b8', 'b1'), "two points on same file")
+    refute(Chessboard.same_file?('b1', 'g1'), "two points NOT on same file")
+    refute(Chessboard.same_file?('g1', 'b1'), "two points NOT on same file")
+  end
+
+  def test_that_it_knows_coordinates_are_on_same_diagonal
+    assert(Chessboard.same_diagonal?('b1', 'e4'), "two points on same diagonal")
+    assert(Chessboard.same_diagonal?('e4', 'b1'), "two points on same diagonal")
+    refute(Chessboard.same_diagonal?('b1', 'e2'), "two points NOT on same diagonal")
+    refute(Chessboard.same_diagonal?('e2', 'b1'), "two points NOT on same diagonal")
+  end
+
+  def test_that_it_knows_distance_between_coordinates
+    assert_equal(1, Chessboard.distance_between('b1', 'b2'))
+    assert_equal(1, Chessboard.distance_between('b1', 'c2'))
+    assert_equal(1, Chessboard.distance_between('b1', 'c1'))
+
+    assert_equal(3, Chessboard.distance_between('b1', 'b4'))
+    assert_equal(3, Chessboard.distance_between('b1', 'e4'))
+    assert_equal(3, Chessboard.distance_between('b1', 'e1'))
+  end
+
 end

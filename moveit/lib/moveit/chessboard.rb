@@ -25,5 +25,26 @@ module MoveIt
     def piece_at(algebraic_coordinate)
       @board[algebraic_coordinate]
     end
+
+    def self.same_rank?(start, target)
+      start[1] == target[1]
+    end
+
+    def self.same_file?(start, target)
+      start[0] == target[0]
+    end
+
+    def self.same_diagonal?(start, target)
+      (start.bytes[0] - target.bytes[0]).abs == (start.bytes[1] - target.bytes[1]).abs
+    end
+
+    # note: this isn't a precise cartesian distance, it is just the number of spaces along a
+    # rank, file, or diagonal
+    def self.distance_between(start, target)
+      rank_distance = (start.bytes[1] - target.bytes[1]).abs
+      file_distance = (start.bytes[0] - target.bytes[0]).abs
+      [rank_distance, file_distance].max
+    end
+
   end
 end
