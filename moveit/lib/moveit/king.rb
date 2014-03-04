@@ -7,7 +7,9 @@ module MoveIt
     end
 
     def valid_move?(start, target, board)
-      true
+      (Chessboard.distance_between(start, target) == 1) &&
+      (!board.occupied?(target) || self.is_opponent?(board.piece_at(target))) &&
+      king_safe(start, target, board)
     end
 
   end
