@@ -14,6 +14,16 @@ class TestPawn < MiniTest::Test
     assert_equal('wP', piece.show)
   end
 
+  def test_pawns_know_their_home_row
+    assert(Chesspiece.create('wP').home?('c2'), "White home")
+    assert(Chesspiece.create('wP').home?('d2'), "White home")
+    refute(Chesspiece.create('wP').home?('d7'), "White NOT home")
+
+    assert(Chesspiece.create('bP').home?('c7'), "Black home")
+    assert(Chesspiece.create('bP').home?('d7'), "Black home")
+    refute(Chesspiece.create('bP').home?('d2'), "Black NOT home")
+  end
+
   def test_white_moves_from_home_row
     board = Chessboard.new
     piece = Chesspiece.create('wP')
@@ -22,6 +32,22 @@ class TestPawn < MiniTest::Test
     assert(piece.valid_move?('c2', 'c3', board), "White PAWN can move forward 1 space from home position")
     assert(piece.valid_move?('c2', 'c4', board), "White PAWN can move forward 2 spaces from home position")
     refute(piece.valid_move?('c2', 'c1', board), "White PAWN can not move backward")
+  end
+
+  def test_pawns_know_forward_movement_for_their_color
+    assert(Chesspiece.create('wP').forward?('c2', 'c3'), "White forward move")
+    assert(Chesspiece.create('wP').forward?('c2', 'd3'), "White forward capture")
+    assert(Chesspiece.create('wP').forward?('c2', 'b3'), "White forward capture")
+    refute(Chesspiece.create('wP').forward?('c3', 'c2'), "White backward move")
+    refute(Chesspiece.create('wP').forward?('d3', 'c2'), "White backward capture")
+    refute(Chesspiece.create('wP').forward?('b3', 'c2'), "White backward capture")
+
+    refute(Chesspiece.create('bP').forward?('c2', 'c3'), "black backward move")
+    refute(Chesspiece.create('bP').forward?('c2', 'd3'), "black backward capture")
+    refute(Chesspiece.create('bP').forward?('c2', 'b3'), "black backward capture")
+    assert(Chesspiece.create('bP').forward?('c3', 'c2'), "black forward move")
+    assert(Chesspiece.create('bP').forward?('d3', 'c2'), "black forward capture")
+    assert(Chesspiece.create('bP').forward?('b3', 'c2'), "black forward capture")
   end
 
   def test_white_moves_from_other_row
@@ -45,7 +71,7 @@ class TestPawn < MiniTest::Test
     assert(piece.valid_move?('d4', 'e5', board), "White PAWN can capture on diagonal")
     assert(piece.valid_move?('d4', 'c5', board), "White PAWN can capture on diagonal")
     refute(piece.valid_move?('d4', 'e3', board), "White PAWN cannot capture on diagonal, backwards")
-    refute(piece.valid_move?('d4', 'c5', board), "White PAWN cannot capture on diagonal, backwards")
+    refute(piece.valid_move?('d4', 'c3', board), "White PAWN cannot capture on diagonal, backwards")
   end
 
   def test_white_blocked

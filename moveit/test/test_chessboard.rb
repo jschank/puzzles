@@ -63,6 +63,26 @@ class TestChessboard < MiniTest::Test
     refute(Chessboard.same_diagonal?('e2', 'b1'), "two points NOT on same diagonal")
   end
 
+  def test_that_it_can_build_a_path_of_coordinates
+    assert_equal(['a1', 'b1', 'c1', 'd1'], Chessboard.make_path('a1', 'd1'), 'Path from a1 to d1')
+    assert_equal(['d1', 'c1', 'b1', 'a1'], Chessboard.make_path('d1', 'a1'), 'Path from d1 to a1')
+    assert_equal(['c1', 'd2', 'e3', 'f4'], Chessboard.make_path('c1', 'f4'), 'Path from c1 go f4')
+    assert_equal(['f4', 'e3', 'd2', 'c1'], Chessboard.make_path('f4', 'c1'), 'Path from f4 to c1')
+    assert_equal(['f4', 'f3', 'f2', 'f1'], Chessboard.make_path('f4', 'f1'), 'Path from f4 to f1')
+    assert_equal(['b1', 'b2', 'b3', 'b4'], Chessboard.make_path('b1', 'b4'), 'Path from b1 to b4')
+    assert_raises(ArgumentError) {Chessboard.make_path('a1', 'd2')}
+  end
+
+  def test_that_it_can_detect_impediments
+    board = Chessboard.new
+    board.add(Chesspiece.create('wP'), 'c2')
+    board.add(Chesspiece.create('wR'), 'e2')
+
+    refute(board.impediments?('c2', 'd2'))
+    refute(board.impediments?('c2', 'e2'))
+    assert(board.impediments?('c2', 'f2'))
+  end
+
   def test_that_it_knows_distance_between_coordinates
     assert_equal(1, Chessboard.distance_between('b1', 'b2'))
     assert_equal(1, Chessboard.distance_between('b1', 'c2'))
