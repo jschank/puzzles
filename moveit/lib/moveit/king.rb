@@ -5,5 +5,10 @@ module MoveIt
     def show
       color_code + 'K'
     end
+
+    def valid_move?(start, target, board)
+      true
+    end
+
   end
 end

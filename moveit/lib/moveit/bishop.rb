@@ -8,11 +8,11 @@ module MoveIt
     end
 
     def valid_move?(start, target, board)
-      true
       # (valid_forward_move?(start, target, board) ||
       # valid_forward_capture?(start, target, board)) &&
       # board.path_clear?(start, target) &&
       # king_safe(start, target, board)
+      true
     end
 
   end
