@@ -26,6 +26,20 @@ class TestChessboard < MiniTest::Test
     end
   end
 
+  def test_that_it_can_be_cloned
+    board = Chessboard.new
+    board.add(Chesspiece.create('wR'), 'a1')
+    board.add(Chesspiece.create('wP'), 'a2')
+    board.add(Chesspiece.create('wN'), 'b1')
+    board.add(Chesspiece.create('wP'), 'b2')
+    cloned_board = board.clone
+    piece = cloned_board.remove('b2')
+
+    assert_equal('wP', piece.show)
+    assert(board.occupied?('b2'))
+    refute(cloned_board.occupied?('b2'))
+  end
+
   def test_that_it_allows_pieces_to_be_placed_on_the_board
     board = Chessboard.new
     piece = Chesspiece.create('bP')

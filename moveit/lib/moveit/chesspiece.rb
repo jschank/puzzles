@@ -32,18 +32,19 @@ module MoveIt
     end
 
     def king_safe(start, target, board)
-      my_king_code = (color == :white) ? 'wK' : 'bK'
-      my_king_coords = board.coordinates_for_piece_code(my_king_code)
-      return true unless my_king_coords # if there is no king on the board, it can't be in jeopardy
+      my_king_code = (self.color == :white) ? 'wK' : 'bK'
 
       post_move_board = board.clone
       post_move_board.remove(target)
       moved_piece = post_move_board.remove(start)
       post_move_board.add(moved_piece, target)
 
-      opponent_color = (color == :white) ? :black : :white
+      my_king_coords = post_move_board.coordinates_for_piece_code(my_king_code)
+      return true unless my_king_coords.any? # if there is no king on the board, it can't be in jeopardy
+
+      opponent_color = (self.color == :white) ? :black : :white
       all_opponent_coords = post_move_board.coordinates_for_all_pieces_of_color(opponent_color)
-      all_opponent_coords.none? { |coords| post_move_board.valid_move?(coords, my_king_coords) }
+      safe = all_opponent_coords.none? { |coords| post_move_board.valid_move?(coords, my_king_coords) }
     end
 
     attr_reader :color
