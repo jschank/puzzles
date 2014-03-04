@@ -8,10 +8,9 @@ module MoveIt
     end
 
     def valid_move?(start, target, board)
-      # (valid_forward_move?(start, target, board) ||
-      # valid_forward_capture?(start, target, board)) &&
-      # board.path_clear?(start, target) &&
-      # binding.pry
+      Chessboard.same_diagonal?(start, target) &&
+      board.path_clear?(start, target) &&
+      (!board.occupied?(target) || self.is_opponent?(board.piece_at(target))) &&
       king_safe(start, target, board)
     end
 

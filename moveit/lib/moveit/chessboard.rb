@@ -42,14 +42,14 @@ module MoveIt
       all_pieces = piece_coordinates
       pieces = all_pieces.keys.select { |piece| piece.show == code}
       coords = pieces.map { |piece| all_pieces[piece] }
-      coords.sort
+      coords.flatten.sort
     end
 
     def coordinates_for_all_pieces_of_color(color)
       all_pieces = piece_coordinates
       pieces = all_pieces.keys.select { |piece| piece.color == color}
       coords = pieces.map { |piece| all_pieces[piece] }
-      coords.sort
+      coords.flatten.sort
     end
 
     def path_clear?(start, target)

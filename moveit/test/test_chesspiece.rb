@@ -8,6 +8,20 @@ class TestChesspiece < MiniTest::Test
     assert_raises(TypeError) { Chesspiece.create('bD') }
   end
 
+  def test_that_it_can_recognize_opponents
+    piece = Chesspiece.create('wP')
+
+    assert(piece.is_opponent?(Chesspiece.create('bB')), 'Black piece is an opponent to white piece')
+    refute(piece.is_opponent?(Chesspiece.create('wB')), 'White piece is not an opponent to white piece')
+  end
+
+  def test_that_it_can_recognize_friendly_pieces
+    piece = Chesspiece.create('bP')
+
+    assert(piece.is_friendly?(Chesspiece.create('bB')), 'Black piece is friendly to black piece')
+    refute(piece.is_friendly?(Chesspiece.create('wB')), 'White piece is not friently to black piece')
+  end
+
   def test_that_it_can_create_pawns
     piece = Chesspiece.create('bP')
     assert_kind_of(Pawn, piece)

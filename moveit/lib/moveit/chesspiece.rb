@@ -27,6 +27,14 @@ module MoveIt
       end
     end
 
+    def is_opponent?(chesspiece)
+      chesspiece.color != @color
+    end
+
+    def is_friendly?(chesspiece)
+      chesspiece.color == @color
+    end
+
     def valid_move?(start, target, board)
       fail NotImplementedError, 'valid_move? should be called on a concrete sub-class', caller
     end
@@ -39,12 +47,12 @@ module MoveIt
       moved_piece = post_move_board.remove(start)
       post_move_board.add(moved_piece, target)
 
-      my_king_coords = post_move_board.coordinates_for_piece_code(my_king_code)
-      return true unless my_king_coords.any? # if there is no king on the board, it can't be in jeopardy
+      my_king_coords = post_move_board.coordinates_for_piece_code(my_king_code).first # there is only one king after all
+      return true unless my_king_coords # if there is no king on the board, it can't be in jeopardy
 
       opponent_color = (self.color == :white) ? :black : :white
       all_opponent_coords = post_move_board.coordinates_for_all_pieces_of_color(opponent_color)
-      safe = all_opponent_coords.none? { |coords| post_move_board.valid_move?(coords, my_king_coords) }
+      safe = all_opponent_coords.none? { |coord| post_move_board.valid_move?(coord, my_king_coords) }
     end
 
     attr_reader :color
