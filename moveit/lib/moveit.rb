@@ -7,7 +7,6 @@ require 'moveit/knight'
 require 'moveit/bishop'
 require 'moveit/queen'
 require 'moveit/king'
-require 'exceptions/invalid_piece_exception'
 
 # Main module for Moveit
 module MoveIt

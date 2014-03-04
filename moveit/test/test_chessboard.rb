@@ -148,4 +148,11 @@ class TestChessboard < MiniTest::Test
     assert_equal(3, Chessboard.distance_between('b1', 'e1'))
   end
 
+  def test_that_it_can_return_change_in_coordinates
+    assert_equal([2, 1], Chessboard.change_in_coordinates('d4', 'f5'))
+    assert_equal([1, 2], Chessboard.change_in_coordinates('d4', 'c6'))
+    assert_equal([3, 3], Chessboard.change_in_coordinates('d4', 'g1'))
+    assert_equal([0, 0], Chessboard.change_in_coordinates('d4', 'd4'))
+  end
+
 end

@@ -35,7 +35,7 @@ module MoveIt
     end
 
     def occupied?(algebraic_coordinate)
-      !!@board[algebraic_coordinate]
+      piece_at(algebraic_coordinate) != nil
     end
 
     def coordinates_for_piece_code(code)
@@ -93,6 +93,12 @@ module MoveIt
       rank_distance = (start.bytes[1] - target.bytes[1]).abs
       file_distance = (start.bytes[0] - target.bytes[0]).abs
       [rank_distance, file_distance].max
+    end
+
+    def self.change_in_coordinates(start, target)
+      file_distance = (start.bytes[0] - target.bytes[0]).abs
+      rank_distance = (start.bytes[1] - target.bytes[1]).abs
+      [file_distance, rank_distance]
     end
 
     private
