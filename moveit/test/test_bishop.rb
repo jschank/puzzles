@@ -61,5 +61,4 @@ class TestBishop < MiniTest::Test
     refute(piece.valid_move?('d4', 'b6', board), 'Bishop cannot move to expose king to check')
     assert(piece.valid_move?('d4', 'f6', board), 'Bishop can capture threatening piece')
   end
-
 end

@@ -13,6 +13,5 @@ module MoveIt
       (!board.occupied?(target) || self.is_opponent?(board.piece_at(target))) &&
       king_safe(start, target, board)
     end
-
   end
 end
