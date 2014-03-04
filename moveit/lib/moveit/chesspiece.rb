@@ -31,6 +31,21 @@ module MoveIt
       fail NotImplementedError, 'valid_move? should be called on a concrete sub-class', caller
     end
 
+    def king_safe(start, target, board)
+      my_king_code = (color == :white) ? 'wK' : 'bK'
+      my_king_coords = board.coordinates_for_piece_code(my_king_code)
+      return true if !my_king_coords # if there is no king on the board, it can't be in jeopardy
+
+      post_move_board = board.clone
+      post_move_board.remove(target)
+      moved_piece = post_move_board.remove(start)
+      post_move_board.add(moved_piece, target)
+
+      opponent_color = (color == :white) ? :black : :white
+      all_opponent_coords = post_move_board.coordinates_for_all_pieces_of_color(opponent_color)
+      all_opponent_coords.none? { |coords| post_move_board.valid_move?(coords, my_king_coords) }
+    end
+
     attr_reader :color
 
     private

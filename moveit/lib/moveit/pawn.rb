@@ -10,7 +10,8 @@ module MoveIt
     def valid_move?(start, target, board)
       (valid_forward_move?(start, target, board) ||
       valid_forward_capture?(start, target, board)) &&
-      !board.impediments?(start, target)
+      board.path_clear?(start, target) &&
+      king_safe(start, target, board)
     end
 
     def forward?(start, target)
@@ -35,6 +36,7 @@ module MoveIt
       forward?(start, target) &&
       Chessboard.same_diagonal?(start, target) && Chessboard.distance_between(start, target) == 1
     end
+
 
   end
 end

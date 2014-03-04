@@ -42,6 +42,25 @@ class TestChessboard < MiniTest::Test
     assert(board.occupied?('d5'))
   end
 
+  def test_that_it_allows_pieces_to_be_removed_from_the_board
+    board = Chessboard.new
+    piece = Chesspiece.create('bP')
+    board.add(piece, 'a1')
+    assert(board.occupied?('a1'))
+    removed_piece = board.remove('a1')
+    refute(board.occupied?('a1'))
+    assert_equal(piece, removed_piece, "Removal returns removed piece")
+  end
+
+  def test_that_it_can_determine_valid_moves
+    board = Chessboard.new
+    piece = Chesspiece.create('bP')
+    board.add(piece, 'b7')
+
+    assert(board.valid_move?('b7', 'b6'))
+    assert_raises(ArgumentError) {board.valid_move?('e4', 'e5')}
+  end
+
   def test_that_it_knows_coordinates_are_on_same_rank
     assert(Chessboard.same_rank?('b1', 'f1'), "two points on same rank")
     assert(Chessboard.same_rank?('f1', 'b1'), "two points on same rank")
@@ -73,14 +92,36 @@ class TestChessboard < MiniTest::Test
     assert_raises(ArgumentError) {Chessboard.make_path('a1', 'd2')}
   end
 
-  def test_that_it_can_detect_impediments
+  def test_that_it_can_detect_clear_path
     board = Chessboard.new
     board.add(Chesspiece.create('wP'), 'c2')
     board.add(Chesspiece.create('wR'), 'e2')
 
-    refute(board.impediments?('c2', 'd2'))
-    refute(board.impediments?('c2', 'e2'))
-    assert(board.impediments?('c2', 'f2'))
+    assert(board.path_clear?('c2', 'd2'))
+    assert(board.path_clear?('c2', 'e2'))
+    refute(board.path_clear?('c2', 'f2'))
+  end
+
+  def test_that_it_can_find_pieces_by_code
+    board = Chessboard.new
+    board.add(Chesspiece.create('wP'), 'a2')
+    board.add(Chesspiece.create('wR'), 'a1')
+    board.add(Chesspiece.create('wP'), 'g2')
+    board.add(Chesspiece.create('wR'), 'g1')
+
+    assert_equal([], board.coordinates_for_piece_code('wK'), "Cannot find piece not on board")
+    assert_equal(['a1', 'g1'], board.coordinates_for_piece_code('wR'), "Find white rooks")
+  end
+
+  def test_that_it_can_find_pieces_color
+    board = Chessboard.new
+    board.add(Chesspiece.create('wP'), 'a2')
+    board.add(Chesspiece.create('wR'), 'a1')
+    board.add(Chesspiece.create('wP'), 'g2')
+    board.add(Chesspiece.create('wR'), 'g1')
+
+    assert_equal([], board.coordinates_for_all_pieces_of_color(:black), "There are no black pieces")
+    assert_equal(['a1', 'a2', 'g1', 'g2'], board.coordinates_for_all_pieces_of_color(:white), "Find white pieces")
   end
 
   def test_that_it_knows_distance_between_coordinates
