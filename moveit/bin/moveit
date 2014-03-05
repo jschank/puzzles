@@ -1,3 +1,56 @@
 #!/usr/bin/env ruby
 
 require 'moveit'
+require 'pathname'
+
+def usage
+  usage = <<EOS
+moveit - a chess validator puzzle
+
+USAGE
+  moveit <board_file> <moves_file> <out_file>
+
+INPUTS
+  board_file - the file that has the board setup
+  moves_file - the file listing the moves to validate
+  out_file   - where the results will go.
+
+  ALL INPUTS are required.
+
+  The out_file will contain one line for each line of the moves_file, and will simply report
+  LEGAL if the move is legal, or ILLEGAL if the move is not valid
+
+EOS
+  puts usage
+end
+
+begin
+  puts usage if ARGV.length != 3
+
+  board_file, moves_file, out_file = ARGV.map{|arg| Pathname.new(arg)}
+
+  fail(ArgumentError, "#{board_file} does not exist", caller) unless board_file.exist?()
+  fail(ArgumentError, "#{moves_file} does not exist", caller) unless moves_file.exist?()
+
+  board = MoveIt::Chessboard.new
+  board.load(board_file)
+
+  File.open(out_file, 'w') do |out|
+    File.readlines(moves_file).each do |move|
+      begin
+        start, target = move.chomp.split(' ')
+        verdict = (board.valid_move?(start, target)) ? "LEGAL" : "ILLEGAL"
+        out.puts verdict
+      rescue StandardError => e
+        puts e.message
+        puts e.backtrace
+        out.puts "ILLEGAL"
+        next
+      end
+    end
+  end
+
+rescue StandardError => e
+  puts e.message
+  puts e.backtrace
+end
