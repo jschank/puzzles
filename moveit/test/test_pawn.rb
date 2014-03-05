@@ -55,6 +55,7 @@ class TestPawn < MiniTest::Test
     piece = Chesspiece.create('wP')
     board.add(piece, 'g4')
 
+    assert(piece.valid_move?('g4', 'g5', board), "White PAWN can move forward one space if not on home row")
     refute(piece.valid_move?('g4', 'g6', board), "White PAWN can not move forward more than one space if not on home row")
   end
 

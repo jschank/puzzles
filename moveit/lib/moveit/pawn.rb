@@ -27,7 +27,9 @@ module MoveIt
 
     def valid_forward_move?(start, target, board)
       !board.occupied?(target) &&
-      (home?(start) && forward?(start, target) && Chessboard.same_file?(start, target) && Chessboard.change_in_coordinates(start, target)[1] <= 2 )
+      forward?(start, target) && Chessboard.same_file?(start, target) &&
+      ((home?(start) && Chessboard.change_in_coordinates(start, target)[1] <= 2) ||
+      (Chessboard.change_in_coordinates(start, target)[1] == 1))
     end
 
     def valid_forward_capture?(start, target, board)
