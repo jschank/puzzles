@@ -163,17 +163,24 @@ module MoveIt
 
     def self.build_diagonal_path(start, target)
       path = []
-      change = change_in_coordinates(start, target)
-      cur_pos = [start, target].min.dup
-      change[0].times do
-        path << cur_pos
-        cur_pos = cur_pos.dup
-        cur_pos[0] = cur_pos[0].succ
-        cur_pos[1] = cur_pos[1].succ
-      end
-      path << [start, target].max.dup
-      path = (start < target) ? path : path.reverse
-    end
+      rank_change_operator = (target[1] <=> start[1]) # to go from start to target, I add, 1, 0, -1
+      file_change_operator = (target[0] <=> start[0])
 
+      start_rank_index = RANKS.index(start[1])
+      start_file_index = FILES.index(start[0])
+
+      target_rank_index = RANKS.index(target[1])
+      target_file_index = FILES.index(target[0])
+
+      file_indexes = start_file_index.step(target_file_index, file_change_operator).to_a
+      rank_indexes = start_rank_index.step(target_rank_index, rank_change_operator).to_a
+
+      index_coords = file_indexes.zip(rank_indexes)
+
+      index_coords.each do |icoord|
+        path << FILES[icoord[0]] + RANKS[icoord[1]]
+      end
+      path
+    end
   end
 end

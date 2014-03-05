@@ -97,12 +97,14 @@ class TestChessboard < MiniTest::Test
   end
 
   def test_that_it_can_build_a_path_of_coordinates
-    assert_equal(['a1', 'b1', 'c1', 'd1'], Chessboard.make_path('a1', 'd1'), 'Path from a1 to d1')
-    assert_equal(['d1', 'c1', 'b1', 'a1'], Chessboard.make_path('d1', 'a1'), 'Path from d1 to a1')
-    assert_equal(['c1', 'd2', 'e3', 'f4'], Chessboard.make_path('c1', 'f4'), 'Path from c1 go f4')
-    assert_equal(['f4', 'e3', 'd2', 'c1'], Chessboard.make_path('f4', 'c1'), 'Path from f4 to c1')
-    assert_equal(['f4', 'f3', 'f2', 'f1'], Chessboard.make_path('f4', 'f1'), 'Path from f4 to f1')
-    assert_equal(['b1', 'b2', 'b3', 'b4'], Chessboard.make_path('b1', 'b4'), 'Path from b1 to b4')
+    assert_equal(['d4', 'd5', 'd6', 'd7'], Chessboard.make_path('d4', 'd7'), "Path from d4 to d7")
+    assert_equal(['d4', 'c5', 'b6', 'a7'], Chessboard.make_path('d4', 'a7'), "Path from d4 to a7")
+    assert_equal(['d4', 'c4', 'b4', 'a4'], Chessboard.make_path('d4', 'a4'), "Path from d4 to a4")
+    assert_equal(['d4', 'c3', 'b2', 'a1'], Chessboard.make_path('d4', 'a1'), "Path from d4 to a1")
+    assert_equal(['d4', 'd3', 'd2', 'd1'], Chessboard.make_path('d4', 'd1'), "Path from d4 to d1")
+    assert_equal(['d4', 'e3', 'f2', 'g1'], Chessboard.make_path('d4', 'g1'), "Path from d4 to g1")
+    assert_equal(['d4', 'e4', 'f4', 'g4'], Chessboard.make_path('d4', 'g4'), "Path from d4 to g4")
+    assert_equal(['d4', 'e5', 'f6', 'g7'], Chessboard.make_path('d4', 'g7'), "Path from d4 to g7")
     assert_raises(ArgumentError) {Chessboard.make_path('a1', 'd2')}
   end
 
