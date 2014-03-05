@@ -7,6 +7,7 @@ require 'moveit/knight'
 require 'moveit/bishop'
 require 'moveit/queen'
 require 'moveit/king'
+require 'moveit/nil_piece'
 
 # Main module for Moveit
 module MoveIt

@@ -12,6 +12,20 @@ module MoveIt
       Chessboard.new(@board.clone)
     end
 
+    def to_s
+      rows = []
+      RANKS.reverse.each do |rank|
+        row = []
+        FILES.each do |file|
+          coords = file + rank
+          piece = piece_at(coords) || NilPiece.new(:empty)
+          row << piece
+        end
+        rows << row.map(&:to_s).join(" ")
+      end
+      rows.join("\n")
+    end
+
     def self.valid?(algebraic_coordinate)
       algebraic_coordinate.length == 2 &&
       FILES.include?(algebraic_coordinate[0]) &&
@@ -40,7 +54,7 @@ module MoveIt
 
     def coordinates_for_piece_code(code)
       all_pieces = piece_coordinates
-      pieces = all_pieces.keys.select { |piece| piece.show == code}
+      pieces = all_pieces.keys.select { |piece| piece.to_s == code}
       coords = pieces.map { |piece| all_pieces[piece] }
       coords.flatten.sort
     end

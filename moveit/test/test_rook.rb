@@ -4,10 +4,10 @@ require 'minitest_helper'
 class TestRook < MiniTest::Test
   def test_that_it_can_display_itself
     piece = Rook.new(:black)
-    assert_equal('bR', piece.show)
+    assert_equal('bR', piece.to_s)
 
     piece = Rook.new(:white)
-    assert_equal('wR', piece.show)
+    assert_equal('wR', piece.to_s)
   end
 
   def test_movement

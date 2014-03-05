@@ -35,7 +35,7 @@ class TestChessboard < MiniTest::Test
     cloned_board = board.clone
     piece = cloned_board.remove('b2')
 
-    assert_equal('wP', piece.show)
+    assert_equal('wP', piece.to_s)
     assert(board.occupied?('b2'))
     refute(cloned_board.occupied?('b2'))
   end
@@ -143,6 +143,69 @@ class TestChessboard < MiniTest::Test
     assert_equal([1, 2], Chessboard.change_in_coordinates('d4', 'c6'))
     assert_equal([3, 3], Chessboard.change_in_coordinates('d4', 'g1'))
     assert_equal([0, 0], Chessboard.change_in_coordinates('d4', 'd4'))
+  end
+
+  def test_that_it_can_convert_itself_to_string
+    empty_board_string =<<EOS
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+EOS
+    board = Chessboard.new
+    assert_equal(empty_board_string.chomp, board.to_s, "Empty Board")
+
+    board.add(Rook.new(:black), 'a8')
+    board.add(Knight.new(:black), 'b8')
+    board.add(Bishop.new(:black), 'c8')
+    board.add(Queen.new(:black), 'd8')
+    board.add(King.new(:black), 'e8')
+    board.add(Bishop.new(:black), 'f8')
+    board.add(Knight.new(:black), 'g8')
+    board.add(Rook.new(:black), 'h8')
+
+    board.add(Pawn.new(:black), 'a7')
+    board.add(Pawn.new(:black), 'b7')
+    board.add(Pawn.new(:black), 'c7')
+    board.add(Pawn.new(:black), 'd7')
+    board.add(Pawn.new(:black), 'e7')
+    board.add(Pawn.new(:black), 'f7')
+    board.add(Pawn.new(:black), 'g7')
+    board.add(Pawn.new(:black), 'h7')
+
+    board.add(Pawn.new(:white), 'a2')
+    board.add(Pawn.new(:white), 'b2')
+    board.add(Pawn.new(:white), 'c2')
+    board.add(Pawn.new(:white), 'd2')
+    board.add(Pawn.new(:white), 'e2')
+    board.add(Pawn.new(:white), 'f2')
+    board.add(Pawn.new(:white), 'g2')
+    board.add(Pawn.new(:white), 'h2')
+
+    board.add(Rook.new(:white), 'a1')
+    board.add(Knight.new(:white), 'b1')
+    board.add(Bishop.new(:white), 'c1')
+    board.add(Queen.new(:white), 'd1')
+    board.add(King.new(:white), 'e1')
+    board.add(Bishop.new(:white), 'f1')
+    board.add(Knight.new(:white), 'g1')
+    board.add(Rook.new(:white), 'h1')
+
+    standard_board_string =<<EOS
+bR bN bB bQ bK bB bN bR
+bP bP bP bP bP bP bP bP
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- --
+wP wP wP wP wP wP wP wP
+wR wN wB wQ wK wB wN wR
+EOS
+    assert_equal(standard_board_string.chomp, board.to_s, "Standard Board")
   end
 
 end

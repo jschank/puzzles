@@ -4,7 +4,7 @@ module MoveIt
   # Not Blocked by enemy pieces
   # Not Blocked by friendly pieces
   class Knight < Chesspiece
-    def show
+    def to_s
       color_code + 'N'
     end
 

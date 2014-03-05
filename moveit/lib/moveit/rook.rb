@@ -3,7 +3,7 @@ module MoveIt
   # Blocked by enemy pieces
   # Blocked by friendly pieces
   class Rook < Chesspiece
-    def show
+    def to_s
       color_code + 'R'
     end
 

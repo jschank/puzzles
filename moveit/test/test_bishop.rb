@@ -4,10 +4,10 @@ require 'minitest_helper'
 class TestBishop < MiniTest::Test
   def test_that_it_can_display_itself
     piece = Chesspiece.create('bB')
-    assert_equal('bB', piece.show)
+    assert_equal('bB', piece.to_s)
 
     piece = Chesspiece.create('wB')
-    assert_equal('wB', piece.show)
+    assert_equal('wB', piece.to_s)
   end
 
   def test_movement

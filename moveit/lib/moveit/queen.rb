@@ -3,7 +3,7 @@ module MoveIt
   # Blocked by enemy pieces
   # Blocked by friendly pieces
   class Queen < Chesspiece
-    def show
+    def to_s
       color_code + 'Q'
     end
 

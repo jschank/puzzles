@@ -8,10 +8,10 @@ class TestPawn < MiniTest::Test
 
   def test_that_it_can_display_itself
     piece = Chesspiece.create('bP')
-    assert_equal('bP', piece.show)
+    assert_equal('bP', piece.to_s)
 
     piece = Chesspiece.create('wP')
-    assert_equal('wP', piece.show)
+    assert_equal('wP', piece.to_s)
   end
 
   def test_pawns_know_their_home_row

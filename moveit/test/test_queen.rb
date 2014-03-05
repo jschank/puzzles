@@ -4,10 +4,10 @@ require 'minitest_helper'
 class TestQueen < MiniTest::Test
   def test_that_it_can_display_itself
     piece = Chesspiece.create('bQ')
-    assert_equal('bQ', piece.show)
+    assert_equal('bQ', piece.to_s)
 
     piece = Chesspiece.create('wQ')
-    assert_equal('wQ', piece.show)
+    assert_equal('wQ', piece.to_s)
   end
   def test_movement
     board = Chessboard.new
