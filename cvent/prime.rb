@@ -53,11 +53,16 @@ end
 require 'benchmark'
 include Benchmark
 
-n = 1000
+n = 100
+puts "100 times, running each implementation, using a random number from 1 to 1,000,000"
+puts "except last one - that run is 1,000,000 checking prime from 1 to 10,000 - to get more hits on the table"
 Benchmark.benchmark(CAPTION, 15, FORMAT) do |x|
-  t_bf = x.report("Brute Force:") {n.times{Prime.isPrime_BruteForce(Random.rand(1_000_000) + 1)}}
-  # tm = x.report("Map:") {n.times{FizzBuzz::map_version}}
-  # tn = x.report("No Conditionals:") {n.times{FizzBuzz::no_conditionals}}
+  t_bf = x.report("Brute Force:")     {n.times{Prime.isPrime_BruteForce(Random.rand(1_000_000) + 1)}}
+  t_o1 = x.report("Optimize 1:")      {n.times{Prime.isPrime_Optimize1(Random.rand(1_000_000) + 1)}}
+  t_ff = x.report("Fail Fast:")       {n.times{Prime.isPrime_FailFast(Random.rand(1_000_000) + 1)}}
+  t_lu = x.report("Look up:")         {n.times{Prime.isPrime_Lookup(Random.rand(1_000_000) + 1)}}
+  t_m  = x.report("Memoized:")        {n.times{Prime.isPrime_Memoized(Random.rand(1_000_000) + 1)}}
+  t_m1mil = x.report("Memoized_mil:") {1_000_000.times{Prime.isPrime_Memoized(Random.rand(10_000) + 1)}}
 end
 
 require 'minitest/autorun'
@@ -87,7 +92,7 @@ class TestPrime < MiniTest::Test
   def test_Memoized
     proc = Proc.new{ |n| Prime.isPrime_Memoized(n) }
     verify_primes(&proc)
-    puts $table
+    # puts $table
   end
 
   def verify_primes(&block)
