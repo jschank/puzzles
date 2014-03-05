@@ -208,4 +208,14 @@ EOS
     assert_equal(standard_board_string.chomp, board.to_s, "Standard Board")
   end
 
+  def test_that_it_can_load_itself_from_file
+    filepath = Pathname.new("resources").join('simple_board.txt')
+    loaded_text = File.readlines(filepath).join('')
+
+    board = Chessboard.new
+    board.load(filepath)
+
+    assert_equal(loaded_text.chomp, board.to_s, "Board loaded from file")
+  end
+
 end

@@ -26,6 +26,20 @@ module MoveIt
       rows.join("\n")
     end
 
+    def load(filepath)
+      rank_order = RANKS.reverse
+      File.readlines(filepath).each_with_index do |line, index|
+        rank = rank_order[index]
+        line.split.each_with_index do |piece_code, file_index|
+          coord = FILES[file_index] + rank
+          if (piece_code != '--')
+            piece = Chesspiece.create(piece_code)
+            add(piece, coord)
+          end
+        end
+      end
+    end
+
     def self.valid?(algebraic_coordinate)
       algebraic_coordinate.length == 2 &&
       FILES.include?(algebraic_coordinate[0]) &&
