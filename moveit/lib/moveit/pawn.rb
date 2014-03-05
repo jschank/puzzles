@@ -27,14 +27,14 @@ module MoveIt
 
     def valid_forward_move?(start, target, board)
       !board.occupied?(target) &&
-      (home?(start) && forward?(start, target) && Chessboard.same_file?(start, target) && Chessboard.distance_between(start, target) <= 2 )
+      (home?(start) && forward?(start, target) && Chessboard.same_file?(start, target) && Chessboard.change_in_coordinates(start, target)[1] <= 2 )
     end
 
     def valid_forward_capture?(start, target, board)
       board.occupied?(target) &&
       board.piece_at(target).color != self.color &&
       forward?(start, target) &&
-      Chessboard.same_diagonal?(start, target) && Chessboard.distance_between(start, target) == 1
+      Chessboard.same_diagonal?(start, target) && Chessboard.change_in_coordinates(start, target)[1] == 1
     end
 
 

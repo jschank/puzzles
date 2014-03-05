@@ -138,16 +138,6 @@ class TestChessboard < MiniTest::Test
     assert_equal(['a1', 'a2', 'g1', 'g2'], board.coordinates_for_all_pieces_of_color(:white), "Find white pieces")
   end
 
-  def test_that_it_knows_distance_between_coordinates
-    assert_equal(1, Chessboard.distance_between('b1', 'b2'))
-    assert_equal(1, Chessboard.distance_between('b1', 'c2'))
-    assert_equal(1, Chessboard.distance_between('b1', 'c1'))
-
-    assert_equal(3, Chessboard.distance_between('b1', 'b4'))
-    assert_equal(3, Chessboard.distance_between('b1', 'e4'))
-    assert_equal(3, Chessboard.distance_between('b1', 'e1'))
-  end
-
   def test_that_it_can_return_change_in_coordinates
     assert_equal([2, 1], Chessboard.change_in_coordinates('d4', 'f5'))
     assert_equal([1, 2], Chessboard.change_in_coordinates('d4', 'c6'))

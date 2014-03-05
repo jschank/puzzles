@@ -87,14 +87,6 @@ module MoveIt
       end
     end
 
-    # note: this isn't a precise cartesian distance, it is just the number of spaces along a
-    # rank, file, or diagonal
-    def self.distance_between(start, target)
-      rank_distance = (start.bytes[1] - target.bytes[1]).abs
-      file_distance = (start.bytes[0] - target.bytes[0]).abs
-      [rank_distance, file_distance].max
-    end
-
     def self.change_in_coordinates(start, target)
       file_distance = (start.bytes[0] - target.bytes[0]).abs
       rank_distance = (start.bytes[1] - target.bytes[1]).abs
@@ -117,9 +109,9 @@ module MoveIt
 
     def self.build_file_path(start, target)
       path = []
-      distance = distance_between(start, target)
+      change = change_in_coordinates(start, target)
       cur_pos = [start, target].min.dup
-      distance.times do
+      change[1].times do
         path << cur_pos
         cur_pos = cur_pos.dup
         cur_pos[1] = cur_pos[1].succ
@@ -130,9 +122,9 @@ module MoveIt
 
     def self.build_rank_path(start, target)
       path = []
-      distance = distance_between(start, target)
+      change = change_in_coordinates(start, target)
       cur_pos = [start, target].min.dup
-      distance.times do
+      change[0].times do
         path << cur_pos
         cur_pos = cur_pos.dup
         cur_pos[0] = cur_pos[0].succ
@@ -143,9 +135,9 @@ module MoveIt
 
     def self.build_diagonal_path(start, target)
       path = []
-      distance = distance_between(start, target)
+      change = change_in_coordinates(start, target)
       cur_pos = [start, target].min.dup
-      distance.times do
+      change[0].times do
         path << cur_pos
         cur_pos = cur_pos.dup
         cur_pos[0] = cur_pos[0].succ
