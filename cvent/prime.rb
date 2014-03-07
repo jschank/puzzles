@@ -53,7 +53,7 @@ end
 require 'benchmark'
 include Benchmark
 
-n = 100
+n = 10
 puts "100 times, running each implementation, using a random number from 1 to 1,000,000"
 puts "except last one - that run is 1,000,000 checking prime from 1 to 10,000 - to get more hits on the table"
 Benchmark.benchmark(CAPTION, 15, FORMAT) do |x|

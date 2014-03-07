@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c33aa85-3f26-4b96-8f2c-ed02c3c21949" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/minitest_helper.rb" afterPath="$PROJECT_DIR$/test/minitest_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/moveit.gemspec" afterPath="$PROJECT_DIR$/moveit.gemspec" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/puzzles.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cvent/prime.rb" afterPath="$PROJECT_DIR$/../cvent/prime.rb" />
     </list>
     <ignored path="moveit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +23,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/moveit@All_tests_in_test__moveit.coverage" NAME="All tests in test: moveit Coverage Results" MODIFIED="1394178200050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="moveit" />
-    <SUITE FILE_PATH="coverage/moveit@All_tests_in_moveit__moveit.coverage" NAME="All tests in moveit: moveit Coverage Results" MODIFIED="1394181929244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="moveit" />
+    <SUITE FILE_PATH="coverage/moveit@All_tests_in_moveit__moveit.coverage" NAME="All tests in moveit: moveit Coverage Results" MODIFIED="1394183015601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="moveit" />
     <SUITE FILE_PATH="coverage/moveit@test_capture_opponent__moveit.coverage" NAME="test_capture_opponent: moveit Coverage Results" MODIFIED="1394181473641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="moveit" />
     <SUITE FILE_PATH="coverage/moveit@Run_test__test_moveit___moveit.coverage" NAME="Run test 'test_moveit': moveit Coverage Results" MODIFIED="1394181905264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="moveit" />
     <SUITE FILE_PATH="coverage/moveit@test__moveit.coverage" NAME="test: moveit Coverage Results" MODIFIED="1394177024625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="moveit" />
@@ -520,24 +527,24 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903865" sideWeight="0.49973276" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47571853" sideWeight="0.5002672" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2405131" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47571853" sideWeight="0.5002672" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47571853" sideWeight="0.49973276" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903865" sideWeight="0.49973276" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32903865" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2405131" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -568,121 +575,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="36" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="3" column="36" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_bishop.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
-          <folding />
-        </state>
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_queen.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
-          <folding />
-        </state>
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_regressions.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <folding />
-        </state>
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_rook.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
-          <folding />
-        </state>
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_chessboard.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="91" selection-start="7895" selection-end="7895" vertical-scroll-proportion="0.55888224" vertical-offset="3392" max-vertical-offset="3893">
-          <folding />
-        </state>
+        <state line="216" column="91" selection-start="7895" selection-end="7895" vertical-scroll-proportion="0.55888224" vertical-offset="3392" max-vertical-offset="3893" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/moveit/chess_board.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="32" selection-start="2025" selection-end="2025" vertical-scroll-proportion="0.0" vertical-offset="955" max-vertical-offset="3281">
-          <folding />
-        </state>
+        <state line="76" column="32" selection-start="2025" selection-end="2025" vertical-scroll-proportion="0.0" vertical-offset="955" max-vertical-offset="3281" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_king.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="100" selection-start="3067" selection-end="3067" vertical-scroll-proportion="1.8287596" vertical-offset="0" max-vertical-offset="2856">
-          <folding />
-        </state>
+        <state line="98" column="100" selection-start="3067" selection-end="3067" vertical-scroll-proportion="1.8287596" vertical-offset="0" max-vertical-offset="2856" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_chesspiece.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="101" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.5784852" vertical-offset="0" max-vertical-offset="1700">
-          <folding />
-        </state>
+        <state line="31" column="101" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.5784852" vertical-offset="0" max-vertical-offset="1700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/moveit/chess_piece.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="213" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="1292">
-          <folding />
-        </state>
+        <state line="16" column="213" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="1292" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_knight.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="32" selection-start="4347" selection-end="4347" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2091">
-          <folding />
-        </state>
+        <state line="106" column="32" selection-start="4347" selection-end="4347" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2091" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_pawn.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="4973" selection-end="4973" vertical-scroll-proportion="0.0" vertical-offset="1773" max-vertical-offset="2771">
-          <folding />
-        </state>
+        <state line="121" column="0" selection-start="4973" selection-end="4973" vertical-scroll-proportion="0.0" vertical-offset="1773" max-vertical-offset="2771" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_moveit.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <folding />
-        </state>
+        <state line="5" column="27" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/moveit">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="11" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.0" vertical-offset="519" max-vertical-offset="1054">
-          <folding />
-        </state>
+        <state line="50" column="11" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.0" vertical-offset="519" max-vertical-offset="1054" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/moveit.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="34" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="697">
-          <folding />
-        </state>
+        <state line="33" column="34" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="697" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/moveit/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="18" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
+        <state line="2" column="18" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/minitest_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="96" selection-end="96" vertical-scroll-proportion="0.13572854" vertical-offset="0" max-vertical-offset="501">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="96" selection-end="96" vertical-scroll-proportion="0.13572854" vertical-offset="0" max-vertical-offset="501" />
       </provider>
     </entry>
   </component>
