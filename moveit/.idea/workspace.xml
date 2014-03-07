@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c33aa85-3f26-4b96-8f2c-ed02c3c21949" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/minitest_helper.rb" afterPath="$PROJECT_DIR$/test/minitest_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/moveit.gemspec" afterPath="$PROJECT_DIR$/moveit.gemspec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/moveit.iml" afterPath="$PROJECT_DIR$/.idea/moveit.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_chesspiece.rb" afterPath="$PROJECT_DIR$/test/test_chesspiece.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_king.rb" afterPath="$PROJECT_DIR$/test/test_king.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_knight.rb" afterPath="$PROJECT_DIR$/test/test_knight.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_pawn.rb" afterPath="$PROJECT_DIR$/test/test_pawn.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/moveit/version.rb" afterPath="$PROJECT_DIR$/lib/moveit/version.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moveit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,71 +32,7 @@
     <favorites_list name="moveit" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="chess_board.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/moveit/chess_board.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="32" selection-start="2025" selection-end="2025" vertical-scroll-proportion="0.0" vertical-offset="955" max-vertical-offset="3281">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chess_piece.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/moveit/chess_piece.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="213" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="1292">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_knight.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test_knight.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="32" selection-start="4347" selection-end="4347" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2091">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_pawn.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test_pawn.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="0" selection-start="4973" selection-end="4973" vertical-scroll-proportion="0.0" vertical-offset="1773" max-vertical-offset="2771">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_moveit.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test_moveit.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="27" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="version.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/moveit/version.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="18" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="moveit" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/moveit">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="55" selection-start="281" selection-end="281" vertical-scroll-proportion="-0.5608782" vertical-offset="519" max-vertical-offset="1054">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -116,7 +46,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/Rakefile" />
-        <option value="$PROJECT_DIR$/test/minitest_helper.rb" />
         <option value="$PROJECT_DIR$/test/test_bishop.rb" />
         <option value="$PROJECT_DIR$/test/test_moveit.rb" />
         <option value="$PROJECT_DIR$/test/test_queen.rb" />
@@ -125,18 +54,19 @@
         <option value="$PROJECT_DIR$/test/test_chessboard.rb" />
         <option value="$PROJECT_DIR$/lib/moveit/chessboard.rb" />
         <option value="$PROJECT_DIR$/lib/moveit/chess_board.rb" />
-        <option value="$PROJECT_DIR$/moveit.gemspec" />
         <option value="$PROJECT_DIR$/test/test_chesspiece.rb" />
         <option value="$PROJECT_DIR$/test/test_king.rb" />
         <option value="$PROJECT_DIR$/test/test_knight.rb" />
         <option value="$PROJECT_DIR$/test/test_pawn.rb" />
         <option value="$PROJECT_DIR$/lib/moveit/version.rb" />
+        <option value="$PROJECT_DIR$/moveit.gemspec" />
+        <option value="$PROJECT_DIR$/test/minitest_helper.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="323" />
-    <option name="y" value="219" />
+    <option name="y" value="218" />
     <option name="width" value="1871" />
     <option name="height" value="1052" />
   </component>
@@ -585,8 +515,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="323" y="219" width="1871" height="1052" extended-state="0" />
-    <editor active="true" />
+    <frame x="323" y="218" width="1871" height="1052" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -596,11 +526,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47571853" sideWeight="0.5002672" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2405131" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2405131" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47571853" sideWeight="0.49973276" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47571853" sideWeight="0.49973276" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -639,13 +569,6 @@
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="36" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/minitest_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="67" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
@@ -692,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/moveit.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="724" selection-end="724" vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_king.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="98" column="100" selection-start="3067" selection-end="3067" vertical-scroll-proportion="1.8287596" vertical-offset="0" max-vertical-offset="2856">
@@ -741,6 +657,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/moveit">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="11" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.0" vertical-offset="519" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moveit.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="34" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/moveit/version.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="18" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
@@ -748,9 +678,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/moveit">
+    <entry file="file://$PROJECT_DIR$/test/minitest_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="55" selection-start="281" selection-end="281" vertical-scroll-proportion="-0.5608782" vertical-offset="519" max-vertical-offset="1054">
+        <state line="4" column="0" selection-start="96" selection-end="96" vertical-scroll-proportion="0.13572854" vertical-offset="0" max-vertical-offset="501">
           <folding />
         </state>
       </provider>
