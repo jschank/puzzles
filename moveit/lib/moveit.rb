@@ -1,6 +1,6 @@
 require 'moveit/version'
-require 'moveit/chessboard'
-require 'moveit/chesspiece'
+require 'moveit/chess_board'
+require 'moveit/chess_piece'
 require 'moveit/pawn'
 require 'moveit/rook'
 require 'moveit/knight'

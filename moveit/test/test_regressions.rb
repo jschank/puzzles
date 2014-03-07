@@ -4,7 +4,7 @@ require_relative 'minitest_helper'
 class TestRegressions < MiniTest::Test
   def setup
     filepath = Pathname.new("resources").join('complex_board.txt')
-    @board = Chessboard.new
+    @board = ChessBoard.new
     @board.load(filepath)
   end
 

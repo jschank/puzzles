@@ -1,6 +1,6 @@
 module MoveIt
   # Chesspiece - manages the chess pieces
-  class Chesspiece
+  class ChessPiece
     VALID_PIECES = %W(bP bR bN bB bQ bK wP wR wN wB wQ wK)
     def self.create(piece_notation)
       validate_request(piece_notation)

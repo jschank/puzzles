@@ -1,15 +1,16 @@
 module MoveIt
   # Chessboard - manages the state of the board
-  class Chessboard
+  class ChessBoard
     RANKS = ('1'..'8').to_a
     FILES = ('a'..'h').to_a
 
+    # @param [ChessBoard] board
     def initialize(board = nil)
       @board = board || {}
     end
 
     def clone
-      Chessboard.new(@board.clone)
+      ChessBoard.new(@board.clone)
     end
 
     def to_s
@@ -21,7 +22,7 @@ module MoveIt
           piece = piece_at(coords) || NilPiece.new(:empty)
           row << piece
         end
-        rows << row.map(&:to_s).join(" ")
+        rows << row.map(&:to_s).join(' ')
       end
       rows.join("\n")
     end
@@ -32,8 +33,8 @@ module MoveIt
         rank = rank_order[index]
         line.split.each_with_index do |piece_code, file_index|
           coord = FILES[file_index] + rank
-          if (piece_code != '--')
-            piece = Chesspiece.create(piece_code)
+          if piece_code != '--'
+            piece = ChessPiece.create(piece_code)
             add(piece, coord)
           end
         end
@@ -81,7 +82,7 @@ module MoveIt
     end
 
     def path_clear?(start, target)
-      path = Chessboard.make_path(start, target)
+      path = ChessBoard.make_path(start, target)
       pieces = path.map {|coordinate| piece_at(coordinate)}
       middle = pieces.slice(1..-2)
       middle.compact.count == 0
@@ -145,7 +146,7 @@ module MoveIt
         cur_pos[1] = cur_pos[1].succ
       end
       path << [start, target].max.dup
-      path = (start < target) ? path : path.reverse
+      (start < target) ? path : path.reverse
     end
 
     def self.build_rank_path(start, target)
@@ -158,7 +159,7 @@ module MoveIt
         cur_pos[0] = cur_pos[0].succ
       end
       path << [start, target].max.dup
-      path = (start < target) ? path : path.reverse
+      (start < target) ? path : path.reverse
     end
 
     def self.build_diagonal_path(start, target)

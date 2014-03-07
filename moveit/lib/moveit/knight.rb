@@ -3,7 +3,7 @@ module MoveIt
   # two spaces along rank or file, then 1 space along file or rank (respectively)
   # Not Blocked by enemy pieces
   # Not Blocked by friendly pieces
-  class Knight < Chesspiece
+  class Knight < ChessPiece
     def to_s
       color_code + 'N'
     end
@@ -17,7 +17,7 @@ module MoveIt
     private
 
     def is_knight_move?(start, target)
-      change = Chessboard.change_in_coordinates(start, target)
+      change = ChessBoard.change_in_coordinates(start, target)
       (change == [1, 2] || change == [2, 1])
     end
   end

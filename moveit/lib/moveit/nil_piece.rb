@@ -1,5 +1,5 @@
 module MoveIt
-  class NilPiece < Chesspiece
+  class NilPiece < ChessPiece
     def to_s
       '--'
     end

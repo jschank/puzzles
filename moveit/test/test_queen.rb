@@ -3,14 +3,14 @@ require_relative 'minitest_helper'
 # test chessboard functionality
 class TestQueen < MiniTest::Test
   def test_that_it_can_display_itself
-    piece = Chesspiece.create('bQ')
+    piece = ChessPiece.create('bQ')
     assert_equal('bQ', piece.to_s)
 
-    piece = Chesspiece.create('wQ')
+    piece = ChessPiece.create('wQ')
     assert_equal('wQ', piece.to_s)
   end
   def test_movement
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Queen.new(:white)
     board.add(piece, 'd4')
 
@@ -29,7 +29,7 @@ class TestQueen < MiniTest::Test
   end
 
   def test_blockers
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Queen.new(:black)
     board.add(piece, 'd4')
 
@@ -45,7 +45,7 @@ class TestQueen < MiniTest::Test
   end
 
   def test_capture
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Queen.new(:black)
     board.add(piece, 'd4')
 
@@ -69,7 +69,7 @@ class TestQueen < MiniTest::Test
   end
 
   def test_exposed_check_rook_style
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Queen.new(:white)
     board.add(piece, 'd4')
 
@@ -81,7 +81,7 @@ class TestQueen < MiniTest::Test
   end
 
   def test_exposed_check_bishop_style
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Queen.new(:white)
     board.add(piece, 'd4')
 

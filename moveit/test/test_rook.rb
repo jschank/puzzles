@@ -11,7 +11,7 @@ class TestRook < MiniTest::Test
   end
 
   def test_movement
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Rook.new(:white)
     board.add(piece, 'd4')
 
@@ -25,7 +25,7 @@ class TestRook < MiniTest::Test
   end
 
   def test_blockers
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Rook.new(:black)
     board.add(piece, 'd4')
 
@@ -37,7 +37,7 @@ class TestRook < MiniTest::Test
   end
 
   def test_capture
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Rook.new(:black)
     board.add(piece, 'd4')
 
@@ -51,7 +51,7 @@ class TestRook < MiniTest::Test
   end
 
   def test_exposed_check
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Rook.new(:white)
     board.add(piece, 'd4')
 

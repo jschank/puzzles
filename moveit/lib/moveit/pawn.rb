@@ -2,7 +2,7 @@ module MoveIt
   # Pawn piece - can move forward one space at a time, along a single file
   # unless on home row - then it can move up to three spaces forward
   # can capture a piece if it is forward, and on the next or previous file
-  class Pawn < Chesspiece
+  class Pawn < ChessPiece
     def to_s
       color_code + 'P'
     end
@@ -27,16 +27,16 @@ module MoveIt
 
     def valid_forward_move?(start, target, board)
       !board.occupied?(target) &&
-      forward?(start, target) && Chessboard.same_file?(start, target) &&
-      ((home?(start) && Chessboard.change_in_coordinates(start, target)[1] <= 2) ||
-      (Chessboard.change_in_coordinates(start, target)[1] == 1))
+      forward?(start, target) && ChessBoard.same_file?(start, target) &&
+      ((home?(start) && ChessBoard.change_in_coordinates(start, target)[1] <= 2) ||
+      (ChessBoard.change_in_coordinates(start, target)[1] == 1))
     end
 
     def valid_forward_capture?(start, target, board)
       board.occupied?(target) &&
       board.piece_at(target).color != self.color &&
       forward?(start, target) &&
-      Chessboard.same_diagonal?(start, target) && Chessboard.change_in_coordinates(start, target)[1] == 1
+      ChessBoard.same_diagonal?(start, target) && ChessBoard.change_in_coordinates(start, target)[1] == 1
     end
 
 

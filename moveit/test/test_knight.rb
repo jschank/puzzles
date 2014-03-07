@@ -3,15 +3,15 @@ require_relative 'minitest_helper'
 # test chessboard functionality
 class TestKnight < MiniTest::Test
   def test_that_it_can_display_itself
-    piece = Chesspiece.create('bN')
+    piece = ChessPiece.create('bN')
     assert_equal('bN', piece.to_s)
 
-    piece = Chesspiece.create('wN')
+    piece = ChessPiece.create('wN')
     assert_equal('wN', piece.to_s)
   end
 
   def test_movement
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Knight.new(:white)
     board.add(piece, 'd4')
 
@@ -30,7 +30,7 @@ class TestKnight < MiniTest::Test
   end
 
   def test_blockers
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Knight.new(:black)
     board.add(piece, 'd4')
 
@@ -43,7 +43,7 @@ class TestKnight < MiniTest::Test
   end
 
   def test_capture_opponent
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Knight.new(:black)
     board.add(piece, 'd4')
 
@@ -68,7 +68,7 @@ class TestKnight < MiniTest::Test
 
 
   def test_capture_friendly
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Knight.new(:black)
     board.add(piece, 'd4')
 
@@ -94,7 +94,7 @@ class TestKnight < MiniTest::Test
   # note: king movement cannot EXPOSE check.
   # but kings cannot move INTO check.
   def test_exposed_check
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Knight.new(:white)
     board.add(piece, 'd4')
 
@@ -105,7 +105,7 @@ class TestKnight < MiniTest::Test
   end
 
   def test_exposed_check
-    board = Chessboard.new
+    board = ChessBoard.new
     piece = Knight.new(:white)
     board.add(piece, 'g4')
 
