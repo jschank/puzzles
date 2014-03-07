@@ -22,6 +22,16 @@ class TestChesspiece < MiniTest::Test
     refute(piece.is_friendly?(ChessPiece.create('wB')), 'White piece is not friently to black piece')
   end
 
+  def test_that_it_correctly_reports_color_code
+    assert_equal('b', ChessPiece.new(:black).color_code, "Reports Black pieces as 'b'")
+    assert_equal('w', ChessPiece.new(:white).color_code, "Reports White pieces as 'w'")
+    assert_raises(TypeError) {ChessPiece.new(:empty).color_code}
+  end
+
+  def test_that_the_base_class_cannot_determine_valid_moves
+    assert_raises(NotImplementedError) {ChessPiece.new(:empty).valid_move?('a1', 'b1', ChessBoard.new)}
+  end
+
   def test_that_it_can_create_pawns
     piece = ChessPiece.create('bP')
     assert_kind_of(Pawn, piece)

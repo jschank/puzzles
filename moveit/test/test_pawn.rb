@@ -75,17 +75,6 @@ class TestPawn < MiniTest::Test
     refute(piece.valid_move?('d4', 'c3', board), "White PAWN cannot capture on diagonal, backwards")
   end
 
-  def test_white_blocked
-    board = ChessBoard.new
-    piece = ChessPiece.create('wP')
-    board.add(piece, 'f2')
-
-    board.add(ChessPiece.create('bP'), 'f3')
-
-    refute(piece.valid_move?('f2', 'f3', board), "White PAWN blocked by black piece")
-    refute(piece.valid_move?('f2', 'f4', board), "White PAWN blocked by black piece")
-  end
-
   def test_black_moves_from_home_row
     board = ChessBoard.new
     piece = ChessPiece.create('bP')

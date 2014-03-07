@@ -42,7 +42,7 @@ class TestKing < MiniTest::Test
     refute(piece.valid_move?('d4', 'e5', board), 'King blocked by friendly piece')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_east
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')
@@ -52,7 +52,7 @@ class TestKing < MiniTest::Test
     assert(piece.valid_move?('d4', 'e4', board), 'King can capture opponent')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_west
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')
@@ -62,7 +62,7 @@ class TestKing < MiniTest::Test
     assert(piece.valid_move?('d4', 'c4', board), 'King can capture opponent')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_north
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')
@@ -72,7 +72,7 @@ class TestKing < MiniTest::Test
     assert(piece.valid_move?('d4', 'd5', board), 'King can capture opponent')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_south
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')
@@ -82,7 +82,7 @@ class TestKing < MiniTest::Test
     assert(piece.valid_move?('d4', 'd3', board), 'King can capture opponent')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_north_east
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')
@@ -92,7 +92,7 @@ class TestKing < MiniTest::Test
     assert(piece.valid_move?('d4', 'e5', board), 'King can capture opponent')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_north_west
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')
@@ -102,7 +102,7 @@ class TestKing < MiniTest::Test
     assert(piece.valid_move?('d4', 'c5', board), 'King can capture opponent')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_south_east
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')
@@ -112,7 +112,7 @@ class TestKing < MiniTest::Test
     assert(piece.valid_move?('d4', 'e3', board), 'King can capture opponent')
   end
 
-  def test_capture_opponent
+  def test_capture_opponent_south_west
     board = ChessBoard.new
     piece = King.new(:black)
     board.add(piece, 'd4')

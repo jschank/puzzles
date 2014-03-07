@@ -4,25 +4,25 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'moveit/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "moveit"
+  spec.name          = 'moveit'
   spec.version       = MoveIt::VERSION
-  spec.authors       = ["John F Schank III"]
-  spec.email         = ["jschank@mac.com"]
+  spec.authors       = ['John F Schank III']
+  spec.email         = ['jschank@mac.com']
   spec.summary       = %q{Validate chess moves}
   spec.description   = %q{Programming puzzle for Arlington Ruby Meetup}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.homepage      = ''
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "minitest"
-  spec.add_development_dependency "guard"
-  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency 'bundler', '~> 1.5'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'minitest'
+  spec.add_development_dependency 'guard'
+  spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'minitest-reporters'
   spec.add_development_dependency 'guard-rake'
   spec.add_development_dependency 'guard-bundler'
@@ -30,5 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard-minitest'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'pry-debugger'
-  spec.add_development_dependency 'pry-doc'  
+  spec.add_development_dependency 'pry-doc'
+  spec.add_development_dependency 'simplecov', '~> 0.7.1'
 end

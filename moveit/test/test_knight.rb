@@ -93,7 +93,7 @@ class TestKnight < MiniTest::Test
 
   # note: king movement cannot EXPOSE check.
   # but kings cannot move INTO check.
-  def test_exposed_check
+  def test_exposed_check_by_move
     board = ChessBoard.new
     piece = Knight.new(:white)
     board.add(piece, 'd4')
@@ -104,7 +104,7 @@ class TestKnight < MiniTest::Test
     refute(piece.valid_move?('d4', 'e6', board), 'Knight cannot expose king to check')
   end
 
-  def test_exposed_check
+  def test_exposed_check_capture
     board = ChessBoard.new
     piece = Knight.new(:white)
     board.add(piece, 'g4')
