@@ -1,4 +1,4 @@
-require 'minitest_helper'
+require_relative 'minitest_helper'
 
 # test chessboard functionality
 class TestPawn < MiniTest::Test
