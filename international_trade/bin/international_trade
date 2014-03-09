@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+
+require 'international_trade'
+require 'ostruct'
+
+def usage
+  usage = <<EOS
+international_trade - A currency conversion puzzle
+
+SEE-ALSO
+  http://www.puzzlenode.com/puzzles/1-international-trade
+
+USAGE
+  international_trade <rates_file> <transaction_file> <sku> <target_currency> <out_file>
+
+INPUTS
+  rates_file        - the file has the currency cross rates, in xml format
+  transaction_file  - the file listing transactions to be processed
+  sku               - the sku to total up across all stores
+  target_currency   - the currency to use for the total
+  out_file          - where the results will go.
+
+  ALL INPUTS are required.
+
+  The out_file will contain one line, with a single double value, it will be the total value of the transactions
+  in the transaction file, for the given SKU converted to the TARGET_CURRENCY
+
+EOS
+  puts usage
+end
+
+def die
+  puts usage
+  exit 1
+end
+
+begin
+  die if ARGV.length != 5
+
+  puts `pwd`
+  rates_file, transaction_file, sku, target_currency, out_file = ARGV
+
+  converter = InternationalTrade::CurrencyConverter.new(rates_file)
+  transactions_data = File.readlines(transaction_file).map(&:chomp).map{ |row| row.split(',')}
+  fields = transactions_data.shift # remove the title row
+
+  transactions = transactions_data.map { |transaction|OpenStruct.new(fields.zip(transaction).to_h) }
+  sku_transactions = transactions.select{ |transaction| transaction.sku == sku }
+
+  target_values = sku_transactions.map { |transaction| converter.convert(transaction.amount, target_currency)}
+  total = target_values.inject(&:+)
+
+  File.open(out_file, 'w') do |file|
+    file.puts(total)
+  end
+
+rescue StandardError => e
+  puts e.message
+  puts e.backtrace
+end
