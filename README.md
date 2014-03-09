@@ -29,6 +29,13 @@ fizzbuzz
 Clasisc fizz buzz puzzle.  
 includes a variety of versions. For example, the classic version with if/elsif/else and modulo arithmetic, a version using Array#map, and a version with no conditional logic - or modulo arithmetic.
 
+International Trade
+-------------------
+Puzzle from the puzzle node - does currency conversions
+I was too late to do it for the meet up, but I think I want to try it anyway
+
+[Link to puzzle Definition](http://www.puzzlenode.com/puzzles/1-international-trade)
+
 moveit
 ------
 Chess validator puzzle for Arlington Ruby Meetup Group
