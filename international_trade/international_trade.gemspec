@@ -24,4 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'nori'
   spec.add_development_dependency 'recursive-open-struct'
   spec.add_development_dependency 'activesupport'
+  spec.add_development_dependency 'PriorityQueue'
+  spec.add_development_dependency 'minitest'
+  spec.add_development_dependency 'minitest-reporters'
 end
