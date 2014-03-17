@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = InternationalTrade::VERSION
   spec.authors       = ['John F Schank III']
   spec.email         = ['jschank@mac.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = 'Puzzle Node - International Trade'
+  spec.description   = 'What is the grand total of sales for item DM1182 across all stores in USD currency?'
   spec.homepage      = ''
   spec.license       = 'MIT'
 

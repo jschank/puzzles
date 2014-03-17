@@ -40,7 +40,9 @@ begin
   puts `pwd`
   rates_file, transaction_file, sku, target_currency, out_file = ARGV
 
-  converter = InternationalTrade::CurrencyConverter.new(rates_file)
+  converter = InternationalTrade::CurrencyConverter.new
+  converter.import_conversions(rates_file)
+
   transactions_data = File.readlines(transaction_file).map(&:chomp).map{ |row| row.split(',')}
   fields = transactions_data.shift # remove the title row
 
@@ -51,7 +53,7 @@ begin
   total = target_values.inject(&:+)
 
   File.open(out_file, 'w') do |file|
-    file.puts(total)
+    file.puts(total.to_f)
   end
 
 rescue StandardError => e
