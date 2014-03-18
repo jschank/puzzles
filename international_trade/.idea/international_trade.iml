@@ -59,8 +59,8 @@
     <configuration default="false" name="All tests in test: international_trade" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
       <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
       <module name="international_trade" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$/test" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift); -Ilib -Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -191,7 +191,6 @@
     </content>
     <orderEntry type="jdk" jdkName="RVM: ruby-2.1.0 [puzzles]" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="PriorityQueue (v0.1.2, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.0.3, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ansi (v1.4.3, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
@@ -206,7 +205,6 @@
     <orderEntry type="library" scope="PROVIDED" name="nori (v2.3.0, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="powerbar (v1.0.11, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.1.1, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="recursive-open-struct (v0.4.5, RVM: ruby-2.1.0 [puzzles]) [gem]" level="application" />
   </component>
 </module>
 

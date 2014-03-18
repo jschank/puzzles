@@ -12,10 +12,6 @@ module InternationalTrade
       nori = Nori.new
       parser = nori.parse(contents)
       parser["rates"]["rate"].each { |hash| add_conversion(OpenStruct.new(hash)) }
-      # read rates into recursive open struct
-      # build a graph of nodes
-      # need a method to get a path of nodes
-      # need a method to apply a path of nodes - should take an array of nodes, and return an array of conversion factors
     end
 
     def add_conversion(conversion)

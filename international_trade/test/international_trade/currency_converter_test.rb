@@ -1,4 +1,4 @@
-require_relative '../minitest_helper'
+require 'minitest_helper'
 
 # test chessboard functionality
 class CurrencyConverterTest < MiniTest::Test
@@ -11,7 +11,7 @@ class CurrencyConverterTest < MiniTest::Test
   end
 
   def test_conversion_factors_for_sample_rates
-    @converter.import_conversions('../resources/SAMPLE_RATES.xml')
+    @converter.import_conversions('resources/SAMPLE_RATES.xml')
     # verify no conversions for unknow currencies
     assert_equal([], @converter.conversion_factors('XXX', 'YYY'), 'Conversion factors for XXX to YYY conversion')
 
@@ -31,7 +31,7 @@ class CurrencyConverterTest < MiniTest::Test
   end
 
   def test_conversion_factors_for_rates
-    @converter.import_conversions('../resources/RATES.xml')
+    @converter.import_conversions('resources/RATES.xml')
 
     # these exist directly in the file
     assert_equal([1.0079], @converter.conversion_factors('AUD', 'CAD'), 'Conversion factors for AUD to CAD')
@@ -46,7 +46,7 @@ class CurrencyConverterTest < MiniTest::Test
   end
 
   def test_convert
-    @converter.import_conversions('../resources/RATES.xml')
+    @converter.import_conversions('resources/RATES.xml')
 
     assert_equal( 99.11, @converter.convert('100.00 USD', 'CAD'), 'Convert USD to CAD')
     assert_equal( 136.70, @converter.convert('100.00 EUR', 'USD'), 'Convert EUR to USD')
