@@ -42,8 +42,10 @@ class TestYamlData < MiniTest::Test
     assert_equal("But Not For Me", data.genres.last.artists.first.albums.first.tracks.last.name)
   end
 
-  def test_yaml_load_is_working_2
-    raise @yaml.inspect
+  def test_with_recursive_open_struct
+    require 'recursive-open-struct'
+    data = RecursiveOpenStruct.new(@yaml, :recurse_over_arrays => true)
+    assert_equal("But Not For Me", data.genres.last.artists.first.albums.first.tracks.last.name)
   end
 end
 
