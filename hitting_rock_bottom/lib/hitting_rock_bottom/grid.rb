@@ -31,6 +31,10 @@ module HittingRockBottom
       @grid[row][column] = value
     end
 
+    def to_s
+      rows.map {|row| row.join('') }.join("\n")
+    end
+
     private
     def bounds_check(row, column)
       fail(IndexError, "Row #{row} is out of range for this grid", caller) if row >= @rows

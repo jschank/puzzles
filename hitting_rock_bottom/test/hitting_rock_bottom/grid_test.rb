@@ -25,4 +25,29 @@ class GridTest < MiniTest::Test
     assert_raises(IndexError) {g[0,2]}
   end
 
+  def test_it_can_display_itself_as_string
+    g = Grid.new(4, 5)
+    g[0,0] = 'a'
+    g[0,1] = 'b'
+    g[0,2] = 'c'
+    g[0,3] = 'd'
+    g[0,4] = 'e'
+    g[1,0] = 'f'
+    g[1,1] = 'g'
+    g[1,2] = 'h'
+    g[1,3] = 'i'
+    g[1,4] = 'j'
+    g[2,0] = 'k'
+    g[2,1] = 'l'
+    g[2,2] = 'm'
+    g[2,3] = 'n'
+    g[2,4] = 'o'
+    g[3,0] = 'p'
+    g[3,1] = 'q'
+    g[3,2] = 'r'
+    g[3,3] = 's'
+    g[3,4] = 't'
+    assert_equal("abcde\nfghij\nklmno\npqrst", g.to_s, 'Grid can display itself as a string')
+  end
+
 end
