@@ -5,7 +5,4 @@ class TestHittingRockBottom < MiniTest::Unit::TestCase
     refute_nil ::HittingRockBottom::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
-  end
 end
