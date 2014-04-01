@@ -1,11 +1,6 @@
 require 'minitest_helper'
 
 class CaveTest < MiniTest::Test
-  def test_that_it_can_create_an_empty_cave
-    c = Cave.new
-    assert_equal("", c.to_s, "Can create an empty cave")
-  end
-
   def test_that_it_can_create_a_cave_from_array_of_strings
     cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
     #####
@@ -33,98 +28,227 @@ class CaveTest < MiniTest::Test
     assert_equal(expected_depth_report, c.depth_report, 'Cave can report water depths')
   end
 
-  # def test_that_it_can_add_water_to_right
-  #   cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~     #
-  #   #     #
-  #   #     #
-  #   #  #  #
-  #   #######
-  #   EOS
-  #   c = Cave.new(cave_string.split("\n"))
-  #
-  #   c.add_water
-  #   cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~~    #
-  #   #     #
-  #   #     #
-  #   #  #  #
-  #   #######
-  #   EOS
-  #   assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 1 unit of water added')
-  # end
+  def test_that_it_can_add_water
+    cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~     #
+    #     #
+    #     #
+    #  #  #
+    #######
+    EOS
+    c = Cave.new(cave_string.split("\n"))
 
-  # def test_that_it_can_add_water_down
-  #   cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~~    #
-  #   #     #
-  #   #     #
-  #   #  #  #
-  #   #######
-  #   EOS
-  #   c = Cave.new
-  #   c.load(cave_string.split("\n"))
-  #
-  #   c.add_water
-  #   cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~~    #
-  #   #~    #
-  #   #     #
-  #   #  #  #
-  #   #######
-  #   EOS
-  #   assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 1 unit of water added')
-  # end
-  #
-  # def test_that_it_can_add_water_at_bottom
-  #   cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~~    #
-  #   #~    #
-  #   #~    #
-  #   #~ #  #
-  #   #######
-  #   EOS
-  #   c = Cave.new
-  #   c.load(cave_string.split("\n"))
-  #
-  #   c.add_water
-  #   cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~~    #
-  #   #~    #
-  #   #~    #
-  #   #~~#  #
-  #   #######
-  #   EOS
-  #   assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 1 unit of water added')
-  # end
-  #
-  # def test_that_adding_water_raises_level
-  #   cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~~    #
-  #   #~    #
-  #   #~    #
-  #   #~~#  #
-  #   #######
-  #   EOS
-  #   c = Cave.new
-  #   c.load(cave_string.split("\n"))
-  #
-  #   c.add_water
-  #   cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
-  #   #######
-  #   ~~    #
-  #   #~    #
-  #   #~~   #
-  #   #~~#  #
-  #   #######
-  #   EOS
-  #   assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 1 unit of water added')
-  # end
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #     #
+    #     #
+    #  #  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 2nd unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #     #
+    #  #  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 3rd unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~    #
+    #  #  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 4th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~    #
+    #~ #  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 5th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~    #
+    #~~#  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 6th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~~   #
+    #~~#  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 7th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~~~  #
+    #~~#  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 8th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~~~~ #
+    #~~#  #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 9th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~~~~ #
+    #~~#~ #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 10th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~~~~ #
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 11th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~    #
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 12th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~~   #
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 13th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~~~  #
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 14th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~~~~ #
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 15th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~    #
+    #~~~~~#
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 16th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~~   #
+    #~~~~~#
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 17th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~~~  #
+    #~~~~~#
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 18th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~~~~ #
+    #~~~~~#
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 19th unit of water added')
+
+    c.add_water
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    ~~~~~~#
+    #~~~~~#
+    #~~~~~#
+    #~~#~~#
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after 20th unit of water added')
+
+    # when the cave is full it should raise an exception
+    assert_raises(RuntimeError) { c.add_water }
+  end
 end

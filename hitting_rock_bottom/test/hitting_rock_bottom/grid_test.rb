@@ -49,5 +49,4 @@ class GridTest < MiniTest::Test
     g[3,4] = 't'
     assert_equal("abcde\nfghij\nklmno\npqrst", g.to_s, 'Grid can display itself as a string')
   end
-
 end
