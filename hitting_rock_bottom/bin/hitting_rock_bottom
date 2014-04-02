@@ -33,35 +33,24 @@ begin
 
   cave_file, out_file = ARGV
 
-
   lines = File.readlines(cave_file).map(&:chomp)
 
   #first line is the water units
-  water_units = lines.shift.to_f
+  water_units = lines.shift.to_i
 
   # skip blank line
   lines.shift
 
   cave = HittingRockBottom::Cave.new(lines)
-
+  water_units = water_units -1 # the initial water unit counts against the total
+  water_units.times { cave.add_water }
+  
   puts water_units
   puts cave.to_s
 
-  # converter = InternationalTrade::CurrencyConverter.new
-  # converter.import_conversions(rates_file)
-  #
-  # transactions_data = File.readlines(transaction_file).map(&:chomp).map{ |row| row.split(',')}
-  # fields = transactions_data.shift # remove the title row
-  #
-  # transactions = transactions_data.map { |transaction|OpenStruct.new(fields.zip(transaction).to_h) }
-  # sku_transactions = transactions.select{ |transaction| transaction.sku == sku }
-  #
-  # target_values = sku_transactions.map { |transaction| converter.convert(transaction.amount, target_currency)}
-  # total = target_values.inject(&:+)
-  #
-  # File.open(out_file, 'w') do |file|
-  #   file.puts(total.to_f)
-  # end
+  File.open(out_file, 'w') do |file|
+    file.puts(cave.depth_report)
+  end
 
 rescue StandardError => e
   puts e.message

@@ -28,6 +28,22 @@ class CaveTest < MiniTest::Test
     assert_equal(expected_depth_report, c.depth_report, 'Cave can report water depths')
   end
 
+  def test_edge_case
+    cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #################
+    ~~~~~~~~~~~~~~~ #
+    #~~~~~~~~~####~ #
+    ###~~~~~~~####~ #
+    ###~~~~~~~####  #
+    #######~~~#######
+    #######~~~#######
+    #################
+    EOS
+    expected_depth_report = '1 2 2 4 4 4 4 6 6 6 1 1 1 1 ~ 0 0'
+    c = Cave.new(cave_string.split("\n"))
+    assert_equal(expected_depth_report, c.depth_report, 'Cave can report water depths')
+  end
+
   def test_that_it_can_add_water
     cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
     #######

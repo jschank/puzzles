@@ -23,7 +23,10 @@ module HittingRockBottom
     end
 
     def depth_report
-      @grid.columns.map{|c| c.select{ |i| i == Water}.length }.join(' ')
+      @grid.columns.map do |c|
+        str = c.join()
+        (str =~ /~\s/) ? Water : str.count(Water)
+      end.join(' ')
     end
 
     def to_s
