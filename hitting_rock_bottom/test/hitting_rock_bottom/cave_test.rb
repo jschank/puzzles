@@ -2,18 +2,18 @@ require 'minitest_helper'
 
 class CaveTest < MiniTest::Test
   def test_that_it_can_create_a_cave_from_array_of_strings
-    cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
+    cave_string = <<-'EOS'
     #####
     ~   #
     # # #
     #####
     EOS
-    c = Cave.new(cave_string.split("\n"))
+    c = Cave.new(cave_string)
     assert_equal(cave_string, c.to_s, 'Cave can be loaded from an array of strings')
   end
 
   def test_that_it_can_report_water_depths
-    cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
+    cave_string = <<-'EOS'
     ################################
     ~~~~~~~~~~~~~~~                #
     #~~~~~~~~~####~~~~~~~~~~~~     #
@@ -24,12 +24,12 @@ class CaveTest < MiniTest::Test
     ################################
     EOS
     expected_depth_report = '1 2 2 4 4 4 4 6 6 6 1 1 1 1 4 3 3 4 4 4 4 5 5 5 5 5 2 2 1 1 0 0'
-    c = Cave.new(cave_string.split("\n"))
+    c = Cave.new(cave_string)
     assert_equal(expected_depth_report, c.depth_report, 'Cave can report water depths')
   end
 
   def test_edge_case
-    cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
+    cave_string = <<-'EOS'
     #################
     ~~~~~~~~~~~~~~~ #
     #~~~~~~~~~####~ #
@@ -40,12 +40,12 @@ class CaveTest < MiniTest::Test
     #################
     EOS
     expected_depth_report = '1 2 2 4 4 4 4 6 6 6 1 1 1 1 ~ 0 0'
-    c = Cave.new(cave_string.split("\n"))
+    c = Cave.new(cave_string)
     assert_equal(expected_depth_report, c.depth_report, 'Cave can report water depths')
   end
 
   def test_that_it_can_add_water
-    cave_string = <<-'EOS'.gsub(/^\s+/, '').chomp
+    cave_string = <<-'EOS'
     #######
     ~     #
     #     #
@@ -53,7 +53,7 @@ class CaveTest < MiniTest::Test
     #  #  #
     #######
     EOS
-    c = Cave.new(cave_string.split("\n"))
+    c = Cave.new(cave_string)
 
     c.add_water
     cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
@@ -266,5 +266,31 @@ class CaveTest < MiniTest::Test
 
     # when the cave is full it should raise an exception
     assert_raises(RuntimeError) { c.add_water }
+  end
+
+  def test_that_it_can_add_water_to_single_width_column
+    cave_string = <<-'EOS'
+    #######
+    #     #
+    ~~    #
+    #~#   #
+    #~#   #
+    #~#   #
+    #######
+    EOS
+    c = Cave.new(cave_string, [5,1])
+    c.add_water
+
+    cave_string_after_water_added = <<-'EOS'.gsub(/^\s+/, '').chomp
+    #######
+    #     #
+    ~~~   #
+    #~#   #
+    #~#   #
+    #~#   #
+    #######
+    EOS
+    assert_equal(cave_string_after_water_added, c.to_s, 'Cave is correct after adding water to a single width hole')
+
   end
 end

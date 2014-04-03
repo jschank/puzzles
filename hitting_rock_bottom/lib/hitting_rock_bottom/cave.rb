@@ -4,7 +4,12 @@ module HittingRockBottom
     Water = '~'
     Rock = '#'
 
-    def initialize(string_array = [""])
+    def initialize(string_array = [""], influx_coords = nil)
+      if string_array.is_a? String
+        string_array.gsub!(/^\s+/, '').chomp!
+        string_array = string_array.split("\n")
+      end
+
       height = string_array.length
       length = string_array[0].length
       @grid = Grid.new(height, length)
@@ -13,7 +18,7 @@ module HittingRockBottom
           @grid[height, length] = string_array[height][length]
         end
       end
-      @water_head = find_influx
+      @water_head = influx_coords || find_influx
       fail "Could not find initial water unit in cave" unless @water_head
     end
 
@@ -43,13 +48,22 @@ module HittingRockBottom
     end
 
     def next_water_location
+      # try to put next unit below the head first
       coord = coord_below(@water_head)
       return coord if @grid[*coord] == Air
 
+      # if that doesn't work, try to put the next unit to the right of the head
       coord = coord_right(@water_head)
       return coord if @grid[*coord] == Air
 
-      first_air_on_row_above(@water_head)
+      # if that doesn't work, seek to the first water unit in this column, and try to put the next
+      # unit to the right of that.
+      temp_head = seek_top_of_water_column(@water_head)
+      coord = coord_right(temp_head)
+      return coord if @grid[*coord] == Air
+
+      # if that doesn't work, move up one row from there, and select the first air in that row.
+      first_air_on_row_above(temp_head)
     end
 
     def coord_below(coord)
@@ -66,5 +80,14 @@ module HittingRockBottom
       fail "Cave is already full of water" unless index
       [row, index]
     end
+
+    def seek_top_of_water_column(coord)
+      row = coord[0]
+      col = coord[1]
+      column = @grid.columns[col]
+      index = column.find_index{ |i| i == Water }
+      coord = [index, col]
+    end
+
   end
 end
