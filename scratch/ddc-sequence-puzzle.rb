@@ -28,6 +28,7 @@ SEQUENCE_CHECKS = {
 
 # to display the valid solutions
 def render(num, array)
+  puts
   puts "Solution #{num+1}"
   puts "    +---+    "
   puts "    | #{array[0]} |    "
@@ -48,18 +49,27 @@ def check_solution(possible_values)
   # possible.value_at(*value) => array of values from possible given array of indexes in "value"
   # if any of the value_at values, are +- 1 from comparison value, then this fails.
   SEQUENCE_CHECKS.any? do |check_cell_id, adjacent_cell_ids|
+    # must convert the cell_ids to indexes 
     cell_index = check_cell_id - 1
+    adjacent_indexes = adjacent_cell_ids.map{ |id| id - 1 }
+
+    # retrieve the values for those indexes
     cell_value = possible_values[cell_index]
-    adjacent_indexes = adjacent_cell_ids.map{ |id| id - 1 } # because I need to convert from Human readable id to indexes
     adjacent_values = possible_values.values_at(*adjacent_indexes)
+
+    # see if any of the adjacent values are in sequence with the check cell
     adjacent_values.any? { |v| (cell_value - v).abs == 1 }
   end
 end
 
+# all possible arrangements...
 possibles = (1..8).to_a.permutation
 
-solutions = possibles.reject { |p| check_solution(p) }
+# reject any that are invalid...
+solutions = possibles.reject{ |p| check_solution(p) }
 
 puts "There are #{possibles.count} ways to fill out the grid..."
 puts "There are #{solutions.length} valid solutions:"
+
+# print out the solutions
 solutions.each_with_index { |s, i| render(i, s) }
