@@ -15,6 +15,11 @@
 # for example 4 in cell 1, and 5 in cell 2 would be prohibited, but 4 in cell 1, and 6 in cell 2
 # would be ok.
 
+# original checks completed the whole search in 0.43 seconds. BUT, I think it can be improved.
+# The sequence checks currently do some checks multiple times. Really all we need is an array of 
+# all of the Adjacent pairs. Tried it, and it does work - shaves 0.03 sec off of the time. BUT
+# I prefer the slower hash based sequence checks because it gives insight into how to arrive at
+# a solution, because it exposes that some cells are more difficult to fill than others.
 SEQUENCE_CHECKS = {
   1 => [2, 3, 4],
   2 => [1, 3, 5, 6],
