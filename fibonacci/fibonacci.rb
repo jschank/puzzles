@@ -25,16 +25,6 @@ module Fibonacci
     
 end
 
-# require 'benchmark'
-# include Benchmark
-#
-# n = 10
-# Benchmark.benchmark(CAPTION, 15, FORMAT) do |x|
-#   tc = x.report("Classic:") { n.times{FizzBuzz::classic}}
-#   tm = x.report("Map:") {n.times{FizzBuzz::map_version}}
-#   tn = x.report("No Conditionals:") {n.times{FizzBuzz::no_conditionals}}
-# end
-
 require 'minitest/autorun'
 
 class TestLibraryFileName < MiniTest::Test
@@ -62,4 +52,13 @@ class TestLibraryFileName < MiniTest::Test
     assert_equal([0, 1, 1, 2, 3, 5, 8, 13], Fibonacci.sequence.take(8))
   end
   
+end
+
+require 'benchmark'
+include Benchmark
+
+n = 3
+Benchmark.benchmark(CAPTION, 15, FORMAT) do |x|
+  tc = x.report("Recursive:") { n.times{Fibonacci.fib_r(30)}}
+  tm = x.report("Sequence:")  { n.times{Fibonacci::sequence.take(30)}}
 end
