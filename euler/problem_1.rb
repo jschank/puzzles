@@ -36,23 +36,23 @@ class TestLibraryFileName < MiniTest::Test
     end
   end
   
-  def test_fancy_works
+  def test_no_loops_works
     100.times do
       max = rand(10000)
       puts "Comparing sums for #{max}"
       sum = Euler.array_comprehensions(max)
-      assert_equal(sum, Euler.fancy(max), "Comparison for max = #{max}")
+      assert_equal(sum, Euler.no_loops(max), "Comparison for max = #{max}")
     end
-  end
-  
+  end  
     
 end
 
-# require 'benchmark'
-# include Benchmark
-#
-# n = 3
-# Benchmark.benchmark(CAPTION, 15, FORMAT) do |x|
-#   tc = x.report("Recursive:") { n.times{Fibonacci.fib_r(30)}}
-#   tm = x.report("Sequence:")  { n.times{Fibonacci::sequence.take(30)}}
-# end
+require 'benchmark'
+include Benchmark
+
+n = 1000
+Benchmark.benchmark(CAPTION, 40, FORMAT) do |x|
+  Euler.methods(false).each do |meth|
+    x.report(meth) { n.times{Euler.send(meth, 10000)}}
+  end
+end
